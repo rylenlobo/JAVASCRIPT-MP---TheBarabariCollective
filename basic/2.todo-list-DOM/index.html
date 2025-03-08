@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modern Todo List</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1><i class="fas fa-check-circle"></i> My Todo List</h1>
+      </header>
+      
+      <div class="input-container">
+        <input type="text" id="new-task" placeholder="What needs to be done?" />
+        <button id="add-task-btn"><i class="fas fa-plus"></i></button>
+      </div>
+      
+      <div class="filters">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="active">Active</button>
+        <button class="filter-btn" data-filter="completed">Completed</button>
+      </div>
+      
+      <ul id="task-list"></ul>
+      
+      <div class="list-footer">
+        <span id="tasks-counter">0 items left</span>
+        <button id="clear-completed">Clear completed</button>
+      </div>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>
