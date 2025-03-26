@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Validation</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Registration Form</h1>
+      <form id="registrationForm" novalidate>
+        <div class="form-group">
+          <label for="name">Full Name</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Enter your full name"
+          />
+          <small class="error-message" id="nameError"></small>
+        </div>
+
+        <div class="form-group">
+          <label for="age">Age</label>
+          <input
+            type="number"
+            id="age"
+            name="age"
+            placeholder="Enter your age"
+            min="18"
+            max="120"
+          />
+          <small class="error-message" id="ageError"></small>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Enter your email"
+          />
+          <small class="error-message" id="emailError"></small>
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Phone Number</label>
+          <input
+            type="tel"
+            id="phone"
+            name="phone"
+            placeholder="Enter your phone number"
+          />
+          <small class="error-message" id="phoneError"></small>
+        </div>
+
+        <div class="form-group">
+          <label for="gender">Gender</label>
+          <select id="gender" name="gender">
+            <option value="">Select Gender</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="nonbinary">Non-binary</option>
+            <option value="other">Other</option>
+            <option value="prefer-not">Prefer not to say</option>
+          </select>
+          <small class="error-message" id="genderError"></small>
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="Create a password"
+          />
+          <div class="password-strength">
+            <div class="strength-meter">
+              <div id="strength-bar"></div>
+            </div>
+            <span id="strength-text">Password strength</span>
+          </div>
+          <small class="error-message" id="passwordError"></small>
+        </div>
+
+        <div class="form-group">
+          <label for="confirmPassword">Confirm Password</label>
+          <input
+            type="password"
+            id="confirmPassword"
+            name="confirmPassword"
+            placeholder="Confirm your password"
+          />
+          <small class="error-message" id="confirmPasswordError"></small>
+        </div>
+
+        <div class="form-group">
+          <label>Interests (Optional)</label>
+          <div class="checkbox-group">
+            <div class="checkbox-item">
+              <input type="checkbox" id="tech" name="interests" value="tech" />
+              <label for="tech">Technology</label>
+            </div>
+            <div class="checkbox-item">
+              <input
+                type="checkbox"
+                id="sports"
+                name="interests"
+                value="sports"
+              />
+              <label for="sports">Sports</label>
+            </div>
+            <div class="checkbox-item">
+              <input
+                type="checkbox"
+                id="music"
+                name="interests"
+                value="music"
+              />
+              <label for="music">Music</label>
+            </div>
+            <div class="checkbox-item">
+              <input
+                type="checkbox"
+                id="travel"
+                name="interests"
+                value="travel"
+              />
+              <label for="travel">Travel</label>
+            </div>
+          </div>
+        </div>
+
+        <button type="submit">Register</button>
+      </form>
+      <div id="successMessage" class="success-message hidden">
+        Registration successful!
+      </div>
+    </div>
+
+    <script src="index.js"></script>
+  </body>
+</html>

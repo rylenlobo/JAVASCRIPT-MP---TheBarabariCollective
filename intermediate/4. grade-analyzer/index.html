@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grade Analyzer</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Grade Analyzer</h1>
+      <p class="description">
+        Enter student grades (0-100) and analyze the results
+      </p>
+
+      <div class="input-section">
+        <input
+          type="number"
+          id="grade-input"
+          min="0"
+          max="100"
+          placeholder="Enter grade (0-100)"
+        />
+        <button id="add-btn">Add Grade</button>
+        <button id="analyze-btn" disabled>Analyze Grades</button>
+        <button id="reset-btn">Reset</button>
+      </div>
+
+      <div class="grades-container">
+        <h3>Current Grades:</h3>
+        <div id="grades-list" class="grades-list">
+          <p class="empty-message">No grades added yet</p>
+        </div>
+      </div>
+
+      <div id="results" class="results hidden">
+        <h2>Analysis Results</h2>
+
+        <div class="result-card">
+          <h3>Basic Statistics</h3>
+          <div class="result-item">
+            <span>Total Grades:</span>
+            <span id="total-grades">0</span>
+          </div>
+          <div class="result-item">
+            <span>Highest Grade:</span>
+            <span id="highest-grade">0</span>
+          </div>
+          <div class="result-item">
+            <span>Lowest Grade:</span>
+            <span id="lowest-grade">0</span>
+          </div>
+          <div class="result-item">
+            <span>Average Grade:</span>
+            <span id="average-grade">0</span>
+          </div>
+        </div>
+
+        <div class="result-card">
+          <h3>Sorted Grades (Low to High)</h3>
+          <div id="sorted-grades" class="grades-display"></div>
+        </div>
+
+        <div class="result-card">
+          <h3>Passing Grades Only (≥ 40)</h3>
+          <div id="passing-grades" class="grades-display"></div>
+          <div class="result-item">
+            <span>Passing Rate:</span>
+            <span id="passing-rate">0%</span>
+          </div>
+          <div class="result-item">
+            <span>Average of Passing Grades:</span>
+            <span id="passing-average">0</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

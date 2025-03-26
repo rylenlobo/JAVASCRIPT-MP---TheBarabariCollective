@@ -1,0 +1,214 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #f5f5f5;
+  color: #333;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #2c3e50;
+}
+
+.description {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #7f8c8d;
+  font-size: 1.1rem;
+}
+
+.input-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+#grade-input {
+  flex: 1;
+  padding: 12px 15px;
+  font-size: 1rem;
+  border: 2px solid #ddd;
+  border-radius: 4px;
+  transition: border-color 0.3s;
+}
+
+#grade-input:focus {
+  outline: none;
+  border-color: #3498db;
+}
+
+button {
+  padding: 12px 20px;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+#add-btn {
+  background: #3498db;
+}
+
+#add-btn:hover {
+  background: #2980b9;
+}
+
+#analyze-btn {
+  background: #27ae60;
+}
+
+#analyze-btn:hover:not([disabled]) {
+  background: #219653;
+}
+
+#analyze-btn[disabled] {
+  background: #95a5a6;
+  cursor: not-allowed;
+}
+
+#reset-btn {
+  background: #e74c3c;
+}
+
+#reset-btn:hover {
+  background: #c0392b;
+}
+
+.grades-container {
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border: 1px solid #e9ecef;
+}
+
+.grades-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  min-height: 3rem;
+  max-height: 250px;
+  overflow-y: auto;
+  padding-right: 10px;
+}
+
+.grade-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.student-index {
+  font-weight: bold;
+  margin-right: 10px;
+  min-width: 80px;
+}
+
+.grade-pill {
+  display: inline-block;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-weight: bold;
+  color: white;
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.fail {
+  background-color: #e74c3c;
+}
+
+.pass {
+  background-color: #f39c12;
+}
+
+.good {
+  background-color: #3498db;
+}
+
+.excellent {
+  background-color: #27ae60;
+}
+
+.empty-message {
+  color: #95a5a6;
+  font-style: italic;
+}
+
+.results {
+  background: #eaf7fd;
+  padding: 1.5rem;
+  border-radius: 8px;
+  border: 1px solid #c5e8fa;
+}
+
+.result-card {
+  background: white;
+  padding: 1.2rem;
+  margin-bottom: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.result-card h3 {
+  margin-bottom: 1rem;
+  color: #3498db;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 0.5rem;
+}
+
+.result-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.8rem 0;
+  border-bottom: 1px dashed #eee;
+}
+
+.result-item:last-child {
+  border-bottom: none;
+}
+
+.grades-display {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin: 1rem 0;
+  max-height: 250px;
+  overflow-y: auto;
+  padding-right: 10px;
+}
+
+.hidden {
+  display: none;
+}
+
+@media (max-width: 600px) {
+  .input-section {
+    flex-direction: column;
+  }
+
+  button {
+    width: 100%;
+  }
+}
