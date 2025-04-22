@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bank Account System</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Bank Account System</h1>
+        <p>Manage your finances securely</p>
+      </header>
+
+      <div class="card">
+        <h2>Create Account</h2>
+        <form id="create-account-form">
+          <div class="form-group">
+            <label for="owner-name">Account Owner</label>
+            <input type="text" id="owner-name" required />
+          </div>
+          <div class="form-group">
+            <label for="initial-balance">Initial Balance ($)</label>
+            <input
+              type="number"
+              id="initial-balance"
+              min="0"
+              step="0.01"
+              required
+            />
+          </div>
+          <button type="submit" class="btn primary-btn">Create Account</button>
+        </form>
+      </div>
+
+      <div id="account-section" class="card" style="display: none">
+        <div class="account-header">
+          <h2>Welcome, <span id="account-owner"></span></h2>
+          <p>Current Balance: <span id="balance-display"></span></p>
+        </div>
+
+        <div class="transactions-container">
+          <div class="transaction-form-container">
+            <h3>Deposit Money</h3>
+            <form id="deposit-form" class="transaction-form">
+              <div class="form-group">
+                <label for="deposit-amount">Amount ($)</label>
+                <input
+                  type="number"
+                  id="deposit-amount"
+                  min="0.01"
+                  step="0.01"
+                  required
+                />
+              </div>
+              <button type="submit" class="btn success-btn">Deposit</button>
+            </form>
+          </div>
+
+          <div class="transaction-form-container">
+            <h3>Withdraw Money</h3>
+            <form id="withdraw-form" class="transaction-form">
+              <div class="form-group">
+                <label for="withdraw-amount">Amount ($)</label>
+                <input
+                  type="number"
+                  id="withdraw-amount"
+                  min="0.01"
+                  step="0.01"
+                  required
+                />
+              </div>
+              <button type="submit" class="btn danger-btn">Withdraw</button>
+            </form>
+          </div>
+        </div>
+
+        <div class="balance-check">
+          <button id="balance-btn" class="btn info-btn">Check Balance</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Transaction History</h2>
+        <ul id="transaction-list" class="transaction-history">
+          <!-- Transactions will be added here -->
+        </ul>
+      </div>
+    </div>
+
+    <script src="index.js"></script>
+  </body>
+</html>

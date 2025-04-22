@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const passwordInput = document.getElementById("password");
   const confirmPasswordInput = document.getElementById("confirmPassword");
   const successMessage = document.getElementById("successMessage");
+  const togglePass = document.getElementById("togglePassword");
 
   // Error elements
   const nameError = document.getElementById("nameError");
@@ -153,12 +154,17 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
+  function togglePassword() {
+    passwordInput.type = this.checked ? "text" : "password";
+  }
+
   // Add event listeners for real-time validation
   nameInput.addEventListener("input", validateName);
   ageInput.addEventListener("input", validateAge);
   emailInput.addEventListener("input", validateEmail);
   phoneInput.addEventListener("input", validatePhone);
   genderSelect.addEventListener("change", validateGender);
+  togglePass.addEventListener("change", togglePassword);
   passwordInput.addEventListener("input", validatePassword);
   confirmPasswordInput.addEventListener("input", validateConfirmPassword);
 

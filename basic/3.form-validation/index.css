@@ -99,3 +99,57 @@ button:hover {
 .hidden {
   display: none;
 }
+
+.password-strength {
+  margin-top: 15px;
+}
+
+.checkbox-group {
+  display: flex;
+  flex-direction: column;
+  margin: 10px 0px;
+}
+
+.checkbox-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+  margin-right: 20px;
+  min-width: 100px;
+}
+
+.checkbox-item input[type="checkbox"] {
+  margin-right: 8px;
+  width: auto;
+  cursor: pointer;
+}
+
+.checkbox-item label {
+  margin-bottom: 0;
+  font-weight: normal;
+  cursor: pointer;
+}
+
+.password-toggle {
+  margin-top: 5px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #555;
+  cursor: pointer;
+  user-select: none;
+}
+
+.password-toggle input[type="checkbox"] {
+  margin-right: 5px;
+  width: auto;
+  cursor: pointer;
+}
+
+.password-toggle label {
+  margin-bottom: 0;
+  font-weight: normal;
+  font-size: 14px;
+  cursor: pointer;
+}
