@@ -1,31 +1,37 @@
+// Wait for the HTML document to be fully loaded and parsed
 document.addEventListener("DOMContentLoaded", () => {
-  // DOM Elements
-  const gradeInput = document.getElementById("grade-input");
-  const addBtn = document.getElementById("add-btn");
-  const analyzeBtn = document.getElementById("analyze-btn");
-  const resetBtn = document.getElementById("reset-btn");
-  const gradesList = document.getElementById("grades-list");
-  const resultsSection = document.getElementById("results");
-  const totalGradesEl = document.getElementById("total-grades");
-  const highestGradeEl = document.getElementById("highest-grade");
-  const lowestGradeEl = document.getElementById("lowest-grade");
-  const averageGradeEl = document.getElementById("average-grade");
-  const sortedGradesEl = document.getElementById("sorted-grades");
-  const passingGradesEl = document.getElementById("passing-grades");
-  const passingRateEl = document.getElementById("passing-rate");
-  const passingAverageEl = document.getElementById("passing-average");
+  // DOM Elements References
+  const gradeInput = document.getElementById("grade-input"); // Input field for grade entry
+  const addBtn = document.getElementById("add-btn"); // Button to add a grade
+  const analyzeBtn = document.getElementById("analyze-btn"); // Button to analyze grades
+  const resetBtn = document.getElementById("reset-btn"); // Button to reset the application
+  const gradesList = document.getElementById("grades-list"); // Container to display added grades
+  const resultsSection = document.getElementById("results"); // Section displaying analysis results
+  const totalGradesEl = document.getElementById("total-grades"); // Element to show total grades count
+  const highestGradeEl = document.getElementById("highest-grade"); // Element to show the highest grade
+  const lowestGradeEl = document.getElementById("lowest-grade"); // Element to show the lowest grade
+  const averageGradeEl = document.getElementById("average-grade"); // Element to show the average grade
+  const sortedGradesEl = document.getElementById("sorted-grades"); // Container for sorted grades display
+  const passingGradesEl = document.getElementById("passing-grades"); // Container for passing grades display
+  const passingRateEl = document.getElementById("passing-rate"); // Element to show the passing rate
+  const passingAverageEl = document.getElementById("passing-average"); // Element to show the average of passing grades
 
-  // Store grades
-  let grades = [];
+  // Application State
+  let grades = []; // Array to store the entered grades
 
-  // Event Listeners
-  addBtn.addEventListener("click", addGrade);
-  analyzeBtn.addEventListener("click", analyzeGrades);
-  resetBtn.addEventListener("click", resetAll);
+  // Event Listeners Setup
+  addBtn.addEventListener("click", addGrade); // Add grade on button click
+  analyzeBtn.addEventListener("click", analyzeGrades); // Analyze grades on button click
+  resetBtn.addEventListener("click", resetAll); // Reset all on button click
+  // Add grade when Enter key is pressed in the input field
   gradeInput.addEventListener("keydown", (e) => {
     if (e.key === "Enter") addGrade();
   });
 
+  /**
+   * Adds a new grade entered by the user.
+   * Validates the input, adds it to the grades array, and updates the UI.
+   */
   function addGrade() {
     // Convert input to number using Number()
     const grade = Number(gradeInput.value);
@@ -52,6 +58,10 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+  /**
+   * Updates the list of grades displayed in the UI.
+   * Clears the current list and re-renders it based on the grades array.
+   */
   function updateGradesList() {
     // Clear current list
     gradesList.innerHTML = "";
@@ -64,33 +74,38 @@ document.addEventListener("DOMContentLoaded", () => {
     // Add each grade as a pill with student index
     grades.forEach((grade, index) => {
       const gradeItem = document.createElement("div");
-      gradeItem.className = "grade-item";
+      gradeItem.className = "grade-item"; // Container for one grade entry
 
       const studentIndex = document.createElement("span");
-      studentIndex.textContent = `Student ${index + 1}:`;
+      studentIndex.textContent = `Student ${index + 1}:`; // Label like "Student 1:"
       studentIndex.className = "student-index";
 
       const pill = document.createElement("span");
-      pill.textContent = grade;
-      pill.className = "grade-pill";
+      pill.textContent = grade; // The grade value
+      pill.className = "grade-pill"; // Base class for styling
 
-      // Add color class based on grade
+      // Add color class based on grade value for visual feedback
       if (grade < 40) {
-        pill.classList.add("fail");
+        pill.classList.add("fail"); // Red for failing
       } else if (grade < 60) {
-        pill.classList.add("pass");
+        pill.classList.add("pass"); // Orange for basic pass
       } else if (grade < 80) {
-        pill.classList.add("good");
+        pill.classList.add("good"); // Blue for good
       } else {
-        pill.classList.add("excellent");
+        pill.classList.add("excellent"); // Green for excellent
       }
 
+      // Append elements to the list item and then to the main list
       gradeItem.appendChild(studentIndex);
       gradeItem.appendChild(pill);
       gradesList.appendChild(gradeItem);
     });
   }
 
+  /**
+   * Analyzes the current list of grades.
+   * Calculates statistics (total, highest, lowest, average, passing info) and updates the results UI.
+   */
   function analyzeGrades() {
     if (grades.length === 0) return;
 
@@ -145,6 +160,11 @@ document.addEventListener("DOMContentLoaded", () => {
     resultsSection.classList.remove("hidden");
   }
 
+  /**
+   * Helper function to display an array of grades as pills in a specified container.
+   * @param {HTMLElement} container - The DOM element to display the grade pills in.
+   * @param {number[]} gradesArray - The array of grades to display.
+   */
   function displayGradePills(container, gradesArray) {
     container.innerHTML = "";
 
@@ -154,18 +174,23 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
+    // Iterate through the grades and create pill elements similar to updateGradesList
     gradesArray.forEach((grade, index) => {
       const gradeItem = document.createElement("div");
       gradeItem.className = "grade-item";
 
+      // Note: Index here might not correspond to the original student index if the array is filtered/sorted
       const studentIndex = document.createElement("span");
-      studentIndex.textContent = `Student ${index + 1}:`;
+      // We might want to adjust this label if context changes (e.g., for sorted list)
+      // For simplicity, keeping it as "Student X:" based on the current array's index
+      studentIndex.textContent = `Grade ${index + 1}:`; // Adjusted label for sorted/filtered lists
       studentIndex.className = "student-index";
 
       const pill = document.createElement("span");
       pill.textContent = grade;
       pill.className = "grade-pill";
 
+      // Apply color coding based on grade value
       if (grade < 40) {
         pill.classList.add("fail");
       } else if (grade < 60) {
@@ -176,12 +201,16 @@ document.addEventListener("DOMContentLoaded", () => {
         pill.classList.add("excellent");
       }
 
-      gradeItem.appendChild(studentIndex);
-      gradeItem.appendChild(pill);
-      container.appendChild(gradeItem);
+      gradeItem.appendChild(studentIndex); // Append index label
+      gradeItem.appendChild(pill); // Append grade pill
+      container.appendChild(gradeItem); // Append item to the container
     });
   }
 
+  /**
+   * Resets the application state.
+   * Clears the grades array, resets the input field, hides results, and disables the analyze button.
+   */
   function resetAll() {
     // Clear grades array
     grades = [];
@@ -193,6 +222,10 @@ document.addEventListener("DOMContentLoaded", () => {
     analyzeBtn.disabled = true;
   }
 
+  /**
+   * Provides visual feedback for invalid grade input.
+   * Adds an error class to the input, clears it, shows an error message, and removes the error state after a delay.
+   */
   function showInputError() {
     gradeInput.classList.add("error");
     gradeInput.value = "";

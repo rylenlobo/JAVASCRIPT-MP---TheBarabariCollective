@@ -7,9 +7,13 @@
     <link rel="stylesheet" href="index.css" />
   </head>
   <body>
+    <!-- Main container for the registration form -->
     <div class="container">
+      <!-- Form title -->
       <h1>Registration Form</h1>
+      <!-- The registration form itself, novalidate prevents default browser validation -->
       <form id="registrationForm" novalidate>
+        <!-- Form group for Full Name input -->
         <div class="form-group">
           <label for="name">Full Name</label>
           <input
@@ -18,9 +22,11 @@
             name="name"
             placeholder="Enter your full name"
           />
+          <!-- Error message display area for name -->
           <small class="error-message" id="nameError"></small>
         </div>
 
+        <!-- Form group for Age input -->
         <div class="form-group">
           <label for="age">Age</label>
           <input
@@ -31,9 +37,11 @@
             min="18"
             max="120"
           />
+          <!-- Error message display area for age -->
           <small class="error-message" id="ageError"></small>
         </div>
 
+        <!-- Form group for Email input -->
         <div class="form-group">
           <label for="email">Email</label>
           <input
@@ -42,9 +50,11 @@
             name="email"
             placeholder="Enter your email"
           />
+          <!-- Error message display area for email -->
           <small class="error-message" id="emailError"></small>
         </div>
 
+        <!-- Form group for Phone Number input -->
         <div class="form-group">
           <label for="phone">Phone Number</label>
           <input
@@ -53,9 +63,11 @@
             name="phone"
             placeholder="Enter your phone number"
           />
+          <!-- Error message display area for phone -->
           <small class="error-message" id="phoneError"></small>
         </div>
 
+        <!-- Form group for Gender selection -->
         <div class="form-group">
           <label for="gender">Gender</label>
           <select id="gender" name="gender">
@@ -66,9 +78,11 @@
             <option value="other">Other</option>
             <option value="prefer-not">Prefer not to say</option>
           </select>
+          <!-- Error message display area for gender -->
           <small class="error-message" id="genderError"></small>
         </div>
 
+        <!-- Form group for Password input -->
         <div class="form-group">
           <label for="password">Password</label>
           <input
@@ -77,19 +91,23 @@
             name="password"
             placeholder="Create a password"
           />
+          <!-- Checkbox to toggle password visibility -->
           <div class="password-toggle">
             <input type="checkbox" id="togglePassword" />
             <label for="togglePassword">Show Password</label>
           </div>
+          <!-- Password strength indicator -->
           <div class="password-strength">
             <div class="strength-meter">
               <div id="strength-bar"></div>
             </div>
             <span id="strength-text">Password strength</span>
           </div>
+          <!-- Error message display area for password -->
           <small class="error-message" id="passwordError"></small>
         </div>
 
+        <!-- Form group for Confirm Password input -->
         <div class="form-group">
           <label for="confirmPassword">Confirm Password</label>
           <input
@@ -98,16 +116,20 @@
             name="confirmPassword"
             placeholder="Confirm your password"
           />
+          <!-- Error message display area for confirm password -->
           <small class="error-message" id="confirmPasswordError"></small>
         </div>
 
+        <!-- Form group for optional Interests checkboxes -->
         <div class="form-group">
           <label>Interests (Optional)</label>
           <div class="checkbox-group">
+            <!-- Checkbox item for Technology interest -->
             <div class="checkbox-item">
               <input type="checkbox" id="tech" name="interests" value="tech" />
               <label for="tech">Technology</label>
             </div>
+            <!-- Checkbox item for Sports interest -->
             <div class="checkbox-item">
               <input
                 type="checkbox"
@@ -117,6 +139,7 @@
               />
               <label for="sports">Sports</label>
             </div>
+            <!-- Checkbox item for Music interest -->
             <div class="checkbox-item">
               <input
                 type="checkbox"
@@ -126,6 +149,7 @@
               />
               <label for="music">Music</label>
             </div>
+            <!-- Checkbox item for Travel interest -->
             <div class="checkbox-item">
               <input
                 type="checkbox"
@@ -138,13 +162,16 @@
           </div>
         </div>
 
+        <!-- Submit button for the form -->
         <button type="submit">Register</button>
       </form>
+      <!-- Success message display area, initially hidden -->
       <div id="successMessage" class="success-message hidden">
         Registration successful!
       </div>
     </div>
 
+    <!-- Link to the JavaScript file -->
     <script src="index.js"></script>
   </body>
 </html>

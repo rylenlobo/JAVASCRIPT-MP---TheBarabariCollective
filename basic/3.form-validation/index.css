@@ -1,9 +1,11 @@
+/* Selects all elements. Resets default margin and padding, sets box-sizing. */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
+/* Selects the body element. Sets font, background color, and centers content. */
 body {
   font-family: Arial, sans-serif;
   background-color: #f5f5f5;
@@ -12,6 +14,7 @@ body {
   padding: 50px 20px;
 }
 
+/* Selects the main container div. Sets background, border, shadow, width, and padding. */
 .container {
   background-color: white;
   border-radius: 8px;
@@ -21,16 +24,19 @@ body {
   padding: 30px;
 }
 
+/* Selects the h1 element. Centers text, adds bottom margin, sets color. */
 h1 {
   text-align: center;
   margin-bottom: 30px;
   color: #333;
 }
 
+/* Selects elements with the class 'form-group'. Adds bottom margin. */
 .form-group {
   margin-bottom: 20px;
 }
 
+/* Selects label elements. Sets display, margin, font weight, and color. */
 label {
   display: block;
   margin-bottom: 5px;
@@ -38,6 +44,7 @@ label {
   color: #555;
 }
 
+/* Selects input and select elements. Sets width, padding, border, radius, and font size. */
 input,
 select {
   width: 100%;
@@ -47,30 +54,35 @@ select {
   font-size: 16px;
 }
 
+/* Selects focused input and select elements. Removes outline, changes border color. */
 input:focus,
 select:focus {
   outline: none;
   border-color: #4d90fe;
 }
 
+/* Selects input and select elements with the 'error' class. Sets border color to red. */
 input.error,
 select.error {
   border-color: #e74c3c;
 }
 
+/* Selects input and select elements with the 'success' class. Sets border color to green. */
 input.success,
 select.success {
   border-color: #2ecc71;
 }
 
+/* Selects elements with the 'error-message' class. Sets color, font size, display, margin, and height. */
 .error-message {
   color: #e74c3c;
   font-size: 14px;
   display: block;
   margin-top: 5px;
-  height: 18px;
+  height: 18px; /* Ensures space is reserved even when empty */
 }
 
+/* Selects button elements. Sets background color, text color, border, radius, padding, font size, cursor, width, and margin. */
 button {
   background-color: #4285f4;
   color: white;
@@ -83,10 +95,12 @@ button {
   margin-top: 10px;
 }
 
+/* Selects hovered button elements. Changes background color. */
 button:hover {
   background-color: #357ae8;
 }
 
+/* Selects elements with the 'success-message' class. Sets background color, text color, alignment, padding, radius, and margin. */
 .success-message {
   background-color: #2ecc71;
   color: white;
@@ -96,20 +110,24 @@ button:hover {
   margin-top: 20px;
 }
 
+/* Selects elements with the 'hidden' class. Hides the element. */
 .hidden {
   display: none;
 }
 
+/* Selects elements with the 'password-strength' class. Adds top margin. */
 .password-strength {
   margin-top: 15px;
 }
 
+/* Selects elements with the 'checkbox-group' class. Styles the container for checkboxes. */
 .checkbox-group {
   display: flex;
   flex-direction: column;
   margin: 10px 0px;
 }
 
+/* Selects elements with the 'checkbox-item' class. Styles individual checkbox items. */
 .checkbox-item {
   display: flex;
   align-items: center;
@@ -118,18 +136,21 @@ button:hover {
   min-width: 100px;
 }
 
+/* Selects checkbox inputs within 'checkbox-item'. Adjusts margin, width, and cursor. */
 .checkbox-item input[type="checkbox"] {
   margin-right: 8px;
   width: auto;
   cursor: pointer;
 }
 
+/* Selects labels within 'checkbox-item'. Resets margin, font weight, and sets cursor. */
 .checkbox-item label {
   margin-bottom: 0;
   font-weight: normal;
   cursor: pointer;
 }
 
+/* Selects elements with the 'password-toggle' class. Styles the 'Show Password' checkbox area. */
 .password-toggle {
   margin-top: 5px;
   display: flex;
@@ -138,18 +159,43 @@ button:hover {
   font-size: 14px;
   color: #555;
   cursor: pointer;
-  user-select: none;
+  user-select: none; /* Prevents text selection */
 }
 
+/* Selects checkbox inputs within 'password-toggle'. Adjusts margin, width, and cursor. */
 .password-toggle input[type="checkbox"] {
   margin-right: 5px;
   width: auto;
   cursor: pointer;
 }
 
+/* Selects labels within 'password-toggle'. Resets margin, font weight, size, and sets cursor. */
 .password-toggle label {
   margin-bottom: 0;
   font-weight: normal;
   font-size: 14px;
   cursor: pointer;
+}
+
+/* Selects the strength meter container */
+.strength-meter {
+  height: 10px;
+  background-color: #eee;
+  border-radius: 5px;
+  overflow: hidden;
+  margin-bottom: 5px;
+}
+
+/* Selects the strength bar itself */
+#strength-bar {
+  height: 100%;
+  width: 0; /* Initial width */
+  background-color: #e74c3c; /* Default color (weak) */
+  transition: width 0.3s ease, background-color 0.3s ease; /* Smooth transitions */
+}
+
+/* Selects the text indicating password strength */
+#strength-text {
+  font-size: 12px;
+  color: #555;
 }

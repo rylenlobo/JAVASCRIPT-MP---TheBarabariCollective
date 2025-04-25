@@ -3,36 +3,52 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>Rock Paper Scissors</title>
+
     <link rel="stylesheet" href="index.css" />
   </head>
+
   <body class="bg-gray-900 text-white">
+    <!-- Main container for the game -->
     <div class="container">
+      <!-- Game title -->
       <h1 class="game-title">Rock Paper Scissors</h1>
+      <!-- Area containing game elements -->
       <div class="game-area">
+        <!-- Player choice buttons -->
         <div class="choices">
           <button id="rock" class="choice-btn">✊ Rock</button>
           <button id="paper" class="choice-btn">✋ Paper</button>
           <button id="scissors" class="choice-btn">✌️ Scissors</button>
         </div>
 
+        <!-- Information display area -->
         <div class="game-info">
+          <!-- Display player's choice -->
           <div id="player-choice" class="choice-display">Your choice:</div>
+          <!-- Display computer's choice -->
           <div id="computer-choice" class="choice-display">
             Computer choice:
           </div>
+          <!-- Display game result -->
           <div id="result" class="result">Choose an option to start!</div>
         </div>
 
+        <!-- Scoreboard display -->
         <div class="score-board">
+          <!-- Display player's score -->
           <div id="player-score">You: 0</div>
+          <!-- Display computer's score -->
           <div id="computer-score">Computer: 0</div>
         </div>
 
+        <!-- Reset game button -->
         <button id="reset" class="reset-btn">Reset Game</button>
       </div>
     </div>
 
+    <!-- Link to the external JavaScript file -->
     <script src="index.js"></script>
   </body>
 </html>

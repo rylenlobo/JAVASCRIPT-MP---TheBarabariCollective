@@ -1,10 +1,11 @@
-/* Simple reset */
+/* Simple reset - Applies basic reset styles to all elements */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* Body styles - Sets default font, line height, color, background, and padding */
 body {
   font-family: Arial, sans-serif;
   line-height: 1.5;
@@ -13,28 +14,31 @@ body {
   padding: 20px;
 }
 
-/* Basic layout */
+/* Basic layout - Styles the main container */
 .container {
   max-width: 800px;
   margin: 0 auto;
 }
 
+/* Header styles - Centers text and adds bottom margin */
 header {
   text-align: center;
   margin-bottom: 30px;
 }
 
+/* Header h1 styles - Sets color, margin, and font size for the main heading */
 header h1 {
   color: #2a5885;
   margin-bottom: 10px;
   font-size: 28px;
 }
 
+/* Header p styles - Sets color for the paragraph in the header */
 header p {
   color: #666;
 }
 
-/* Card styles */
+/* Card styles - Defines background, border, shadow, padding, and margin for card elements */
 .card {
   background-color: white;
   border-radius: 8px;
@@ -43,23 +47,26 @@ header p {
   margin-bottom: 20px;
 }
 
+/* h2 styles - Sets font size, margin, and color for secondary headings */
 h2 {
   font-size: 20px;
   margin-bottom: 15px;
   color: #333;
 }
 
+/* h3 styles - Sets font size, margin, and color for tertiary headings */
 h3 {
   font-size: 18px;
   margin-bottom: 10px;
   color: #444;
 }
 
-/* Form elements */
+/* Form elements - Styles form groups */
 .form-group {
   margin-bottom: 15px;
 }
 
+/* Label styles - Styles form labels */
 label {
   display: block;
   margin-bottom: 5px;
@@ -67,6 +74,7 @@ label {
   font-size: 14px;
 }
 
+/* Input styles - Styles form input fields */
 input {
   width: 100%;
   padding: 8px;
@@ -75,13 +83,14 @@ input {
   font-size: 16px;
 }
 
+/* Input focus styles - Styles input fields when they have focus */
 input:focus {
   outline: none;
   border-color: #2a5885;
   box-shadow: 0 0 3px rgba(42, 88, 133, 0.3);
 }
 
-/* Button styles */
+/* Button styles - Defines base styles for buttons */
 .btn {
   display: inline-block;
   padding: 8px 16px;
@@ -94,99 +103,115 @@ input:focus {
   transition: background-color 0.3s;
 }
 
+/* Primary button styles - Styles primary action buttons */
 .primary-btn {
   background-color: #2a5885;
   color: white;
 }
 
+/* Success button styles - Styles buttons indicating success */
 .success-btn {
   background-color: #4caf50;
   color: white;
 }
 
+/* Danger button styles - Styles buttons indicating danger or cancellation */
 .danger-btn {
   background-color: #f44336;
   color: white;
 }
 
+/* Info button styles - Styles informational buttons */
 .info-btn {
   background-color: #2196f3;
   color: white;
 }
 
+/* Primary button hover styles - Styles primary buttons on hover */
 .primary-btn:hover {
   background-color: #1e4572;
 }
+/* Success button hover styles - Styles success buttons on hover */
 .success-btn:hover {
   background-color: #3d8b40;
 }
+/* Danger button hover styles - Styles danger buttons on hover */
 .danger-btn:hover {
   background-color: #d32f2f;
 }
+/* Info button hover styles - Styles info buttons on hover */
 .info-btn:hover {
   background-color: #0b7dda;
 }
 
-/* Account section */
+/* Account section - Styles the account header */
 .account-header {
   text-align: center;
   margin-bottom: 20px;
 }
 
+/* Account owner span styles - Styles the account owner name */
 #account-owner {
   color: #2a5885;
 }
 
+/* Balance display span styles - Styles the balance display */
 #balance-display {
   font-weight: bold;
 }
 
-/* Transaction forms */
+/* Transaction forms - Styles the container for transaction forms */
 .transactions-container {
   display: flex;
   flex-direction: column;
   gap: 15px;
 }
 
+/* Transaction form container styles - Styles individual transaction form containers */
 .transaction-form-container {
   background-color: #f9f9f9;
   padding: 15px;
   border-radius: 6px;
 }
 
+/* Balance check section styles - Styles the balance check button container */
 .balance-check {
   margin-top: 15px;
   text-align: center;
 }
 
-/* Transaction history */
+/* Transaction history - Styles the transaction history list */
 .transaction-history {
   max-height: 200px;
   overflow-y: auto;
   list-style-type: none;
 }
 
+/* Transaction history list item styles - Styles individual transaction items */
 .transaction-history li {
   padding: 8px 0;
   border-bottom: 1px solid #eee;
 }
 
+/* Transaction history last list item styles - Removes bottom border from the last item */
 .transaction-history li:last-child {
   border-bottom: none;
 }
 
-/* Green text for positive messages */
+/* Green text for positive messages - Styles text indicating success */
 .success-text {
   color: #4caf50;
 }
 
-/* Responsive layouts */
+/* Responsive layouts - Media query for screens wider than 600px */
 @media (min-width: 600px) {
+  /* Transaction container layout on wider screens - Arranges forms horizontally */
   .transactions-container {
     flex-direction: row;
     gap: 20px;
   }
 
+  /* Transaction form container layout on wider screens - Makes forms take equal space */
   .transaction-form-container {
     flex: 1;
   }

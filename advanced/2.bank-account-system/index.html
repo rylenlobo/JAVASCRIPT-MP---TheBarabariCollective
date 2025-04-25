@@ -7,14 +7,18 @@
     <link rel="stylesheet" href="index.css" />
   </head>
   <body>
+    <!-- Main container for the application -->
     <div class="container">
+      <!-- Header section with title and description -->
       <header>
         <h1>Bank Account System</h1>
         <p>Manage your finances securely</p>
       </header>
 
+      <!-- Card for creating a new bank account -->
       <div class="card">
         <h2>Create Account</h2>
+        <!-- Form to input owner name and initial balance -->
         <form id="create-account-form">
           <div class="form-group">
             <label for="owner-name">Account Owner</label>
@@ -34,15 +38,20 @@
         </form>
       </div>
 
+      <!-- Section displaying account details and transaction forms (initially hidden) -->
       <div id="account-section" class="card" style="display: none">
+        <!-- Account header displaying owner name and balance -->
         <div class="account-header">
           <h2>Welcome, <span id="account-owner"></span></h2>
           <p>Current Balance: <span id="balance-display"></span></p>
         </div>
 
+        <!-- Container for deposit and withdrawal forms -->
         <div class="transactions-container">
+          <!-- Deposit form container -->
           <div class="transaction-form-container">
             <h3>Deposit Money</h3>
+            <!-- Form for depositing money -->
             <form id="deposit-form" class="transaction-form">
               <div class="form-group">
                 <label for="deposit-amount">Amount ($)</label>
@@ -58,8 +67,10 @@
             </form>
           </div>
 
+          <!-- Withdrawal form container -->
           <div class="transaction-form-container">
             <h3>Withdraw Money</h3>
+            <!-- Form for withdrawing money -->
             <form id="withdraw-form" class="transaction-form">
               <div class="form-group">
                 <label for="withdraw-amount">Amount ($)</label>
@@ -76,19 +87,23 @@
           </div>
         </div>
 
+        <!-- Button to check the current balance -->
         <div class="balance-check">
           <button id="balance-btn" class="btn info-btn">Check Balance</button>
         </div>
       </div>
 
+      <!-- Card displaying the transaction history -->
       <div class="card">
         <h2>Transaction History</h2>
+        <!-- Unordered list to display transaction messages -->
         <ul id="transaction-list" class="transaction-history">
           <!-- Transactions will be added here -->
         </ul>
       </div>
     </div>
 
+    <!-- Link to the JavaScript file -->
     <script src="index.js"></script>
   </body>
 </html>

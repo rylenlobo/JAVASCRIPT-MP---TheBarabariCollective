@@ -8,12 +8,16 @@
   </head>
   <body>
     <div class="container">
+      <!-- Main heading for the application -->
       <h1>Grade Analyzer</h1>
+      <!-- Description of the application -->
       <p class="description">
         Enter student grades (0-100) and analyze the results
       </p>
 
+      <!-- Section for grade input and action buttons -->
       <div class="input-section">
+        <!-- Input field for entering grades -->
         <input
           type="number"
           id="grade-input"
@@ -21,53 +25,71 @@
           max="100"
           placeholder="Enter grade (0-100)"
         />
+        <!-- Button to add the entered grade -->
         <button id="add-btn">Add Grade</button>
+        <!-- Button to trigger grade analysis -->
         <button id="analyze-btn" disabled>Analyze Grades</button>
+        <!-- Button to reset the application state -->
         <button id="reset-btn">Reset</button>
       </div>
 
+      <!-- Container to display the list of added grades -->
       <div class="grades-container">
         <h3>Current Grades:</h3>
+        <!-- List where individual grades will be displayed -->
         <div id="grades-list" class="grades-list">
+          <!-- Message shown when no grades are added -->
           <p class="empty-message">No grades added yet</p>
         </div>
       </div>
 
+      <!-- Section to display the analysis results (initially hidden) -->
       <div id="results" class="results hidden">
         <h2>Analysis Results</h2>
 
+        <!-- Card displaying basic statistics -->
         <div class="result-card">
           <h3>Basic Statistics</h3>
+          <!-- Displays the total number of grades -->
           <div class="result-item">
             <span>Total Grades:</span>
             <span id="total-grades">0</span>
           </div>
+          <!-- Displays the highest grade -->
           <div class="result-item">
             <span>Highest Grade:</span>
             <span id="highest-grade">0</span>
           </div>
+          <!-- Displays the lowest grade -->
           <div class="result-item">
             <span>Lowest Grade:</span>
             <span id="lowest-grade">0</span>
           </div>
+          <!-- Displays the average grade -->
           <div class="result-item">
             <span>Average Grade:</span>
             <span id="average-grade">0</span>
           </div>
         </div>
 
+        <!-- Card displaying grades sorted from low to high -->
         <div class="result-card">
           <h3>Sorted Grades (Low to High)</h3>
+          <!-- Container for displaying sorted grade pills -->
           <div id="sorted-grades" class="grades-display"></div>
         </div>
 
+        <!-- Card displaying passing grades and related statistics -->
         <div class="result-card">
           <h3>Passing Grades Only (≥ 40)</h3>
+          <!-- Container for displaying passing grade pills -->
           <div id="passing-grades" class="grades-display"></div>
+          <!-- Displays the passing rate percentage -->
           <div class="result-item">
             <span>Passing Rate:</span>
             <span id="passing-rate">0%</span>
           </div>
+          <!-- Displays the average of passing grades -->
           <div class="result-item">
             <span>Average of Passing Grades:</span>
             <span id="passing-average">0</span>
@@ -76,6 +98,7 @@
       </div>
     </div>
 
+    <!-- Link to the JavaScript file -->
     <script src="script.js"></script>
   </body>
 </html>

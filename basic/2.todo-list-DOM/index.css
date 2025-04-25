@@ -1,3 +1,4 @@
+/* Root element: Defines CSS variables for colors */
 :root {
   --primary-color: #3498db;
   --secondary-color: #2980b9;
@@ -10,12 +11,14 @@
   --white: #fff;
 }
 
+/* Universal selector: Resets margin, padding, and sets box-sizing */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* Body element: Sets base font, background gradient, text color, and layout */
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -27,6 +30,7 @@ body {
   padding: 20px;
 }
 
+/* Container class: Styles the main application container */
 .container {
   background-color: var(--white);
   border-radius: 12px;
@@ -36,6 +40,7 @@ body {
   overflow: hidden;
 }
 
+/* Header element: Styles the header section */
 header {
   background-color: var(--primary-color);
   padding: 20px;
@@ -43,15 +48,18 @@ header {
   text-align: center;
 }
 
+/* H1 inside header: Styles the main title */
 header h1 {
   font-size: 1.8rem;
   font-weight: 600;
 }
 
+/* Icon inside header: Adds margin to the header icon */
 header i {
   margin-right: 10px;
 }
 
+/* Input container class: Styles the container for the task input and add button */
 .input-container {
   display: flex;
   padding: 20px;
@@ -59,6 +67,7 @@ header i {
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 }
 
+/* Text input element: Styles the task input field */
 input[type="text"] {
   flex: 1;
   padding: 12px 15px;
@@ -68,11 +77,13 @@ input[type="text"] {
   transition: border-color 0.3s;
 }
 
+/* Text input focus state: Styles the input field when focused */
 input[type="text"]:focus {
   outline: none;
   border-color: var(--primary-color);
 }
 
+/* Add task button ID: Styles the button for adding tasks */
 #add-task-btn {
   background-color: var(--primary-color);
   color: var(--white);
@@ -83,10 +94,12 @@ input[type="text"]:focus {
   transition: background-color 0.3s;
 }
 
+/* Add task button hover state: Styles the add button on hover */
 #add-task-btn:hover {
   background-color: var(--secondary-color);
 }
 
+/* Filters class: Styles the container for filter buttons */
 .filters {
   display: flex;
   justify-content: center;
@@ -95,6 +108,7 @@ input[type="text"]:focus {
   border-bottom: 1px solid var(--medium-gray);
 }
 
+/* Filter button class: Styles the filter buttons */
 .filter-btn {
   background: none;
   border: none;
@@ -107,15 +121,18 @@ input[type="text"]:focus {
   transition: all 0.2s;
 }
 
+/* Filter button hover state: Styles filter buttons on hover */
 .filter-btn:hover {
   background-color: rgba(0, 0, 0, 0.05);
 }
 
+/* Active filter button class: Styles the currently active filter button */
 .filter-btn.active {
   background-color: var(--primary-color);
   color: var(--white);
 }
 
+/* Task list ID: Styles the unordered list containing tasks */
 #task-list {
   list-style-type: none;
   padding: 0;
@@ -126,6 +143,7 @@ input[type="text"]:focus {
   border-bottom: 1px solid var(--medium-gray);
 }
 
+/* List items inside task list: Styles individual task items */
 #task-list li {
   display: flex;
   align-items: center;
@@ -134,10 +152,12 @@ input[type="text"]:focus {
   transition: background-color 0.2s;
 }
 
+/* List item hover state: Styles task items on hover */
 #task-list li:hover {
   background-color: var(--light-gray);
 }
 
+/* Checkbox inside task list items: Styles the task completion checkbox */
 #task-list li input[type="checkbox"] {
   margin-right: 15px;
   width: 20px;
@@ -146,17 +166,20 @@ input[type="text"]:focus {
   accent-color: var(--success-color);
 }
 
+/* Span inside task list items: Styles the task text */
 #task-list li span {
   flex: 1;
   word-break: break-word;
   transition: all 0.3s;
 }
 
+/* Completed task span: Styles the text of completed tasks */
 #task-list li span.completed {
   text-decoration: line-through;
   color: var(--dark-gray);
 }
 
+/* Delete button class: Styles the delete task button (initially hidden) */
 .delete-btn {
   background: none;
   border: none;
@@ -168,11 +191,13 @@ input[type="text"]:focus {
   transition: all 0.2s;
 }
 
+/* Delete button visibility on hover: Makes the delete button visible when hovering over a task item */
 #task-list li:hover .delete-btn {
   visibility: visible;
   opacity: 1;
 }
 
+/* Empty message class: Styles the message shown when the task list is empty */
 .empty-message {
   color: var(--dark-gray);
   text-align: center;
@@ -180,6 +205,7 @@ input[type="text"]:focus {
   font-style: italic;
 }
 
+/* List footer class: Styles the footer section below the task list */
 .list-footer {
   display: flex;
   justify-content: space-between;
@@ -191,6 +217,7 @@ input[type="text"]:focus {
   font-size: 0.9rem;
 }
 
+/* Clear completed button ID: Styles the button to clear completed tasks */
 #clear-completed {
   background: none;
   border: none;
@@ -200,12 +227,15 @@ input[type="text"]:focus {
   transition: color 0.2s;
 }
 
+/* Clear completed button hover state: Styles the clear completed button on hover */
 #clear-completed:hover {
   color: var(--danger-color);
   text-decoration: underline;
 }
 
+/* Media query for smaller screens (max-width 600px): Adjusts layout for mobile devices */
 @media (max-width: 600px) {
+  /* Container adjustments for small screens */
   .container {
     border-radius: 0;
     box-shadow: none;
@@ -215,14 +245,17 @@ input[type="text"]:focus {
     flex-direction: column;
   }
 
+  /* Body adjustments for small screens */
   body {
     padding: 0;
   }
 
+  /* Input container adjustments for small screens */
   .input-container {
     padding: 15px;
   }
 
+  /* Task list adjustments for small screens */
   #task-list {
     flex: 0;
     height: 60vh;
@@ -230,6 +263,7 @@ input[type="text"]:focus {
     overflow-y: scroll;
   }
 
+  /* Header H1 adjustments for small screens */
   header h1 {
     font-size: 1.5rem;
   }

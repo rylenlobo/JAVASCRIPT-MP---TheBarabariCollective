@@ -8,31 +8,38 @@
   </head>
   <body>
     <div class="container">
+      <!-- Header section with title and description -->
       <header>
         <h1>🚗 Vehicle Rental System</h1>
         <p>Rent cars and bikes for your next adventure</p>
       </header>
 
+      <!-- Section to display available vehicles -->
       <section>
         <h2>Available Vehicles</h2>
         <div class="vehicles-container" id="vehicles-list">
-          <!-- Vehicles will be displayed here -->
+          <!-- Vehicles will be dynamically displayed here by JavaScript -->
         </div>
       </section>
 
+      <!-- Section containing the rental form -->
       <section class="rental-form">
         <h2>Rent a Vehicle</h2>
+        <!-- Form group for vehicle selection dropdown -->
         <div class="form-group">
           <label for="vehicle-select">Select Vehicle:</label>
           <select id="vehicle-select">
             <option value="" disabled selected>Choose a vehicle</option>
           </select>
         </div>
+        <!-- Form group for entering the number of rental days -->
         <div class="form-group">
           <label for="days">Number of Days:</label>
           <input type="number" id="days" min="1" value="1" />
         </div>
+        <!-- Button to trigger the rental process -->
         <button id="rent-btn">Rent Now</button>
+        <!-- Div to display the result of the rental attempt -->
         <div id="rental-result" class="result"></div>
       </section>
     </div>

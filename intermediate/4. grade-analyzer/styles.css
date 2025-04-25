@@ -1,3 +1,4 @@
+/* Universal selector: Resets margin, padding, box-sizing and sets default font */
 * {
   margin: 0;
   padding: 0;
@@ -5,12 +6,14 @@
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
+/* Body element: Sets background color, text color, and line height */
 body {
   background-color: #f5f5f5;
   color: #333;
   line-height: 1.6;
 }
 
+/* Main container: Sets max width, centers content, adds padding, background, border radius, and shadow */
 .container {
   max-width: 800px;
   margin: 2rem auto;
@@ -20,12 +23,14 @@ body {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
+/* Main heading: Centers text, adds bottom margin, and sets color */
 h1 {
   text-align: center;
   margin-bottom: 1rem;
   color: #2c3e50;
 }
 
+/* Description paragraph: Centers text, adds bottom margin, sets color and font size */
 .description {
   text-align: center;
   margin-bottom: 2rem;
@@ -33,6 +38,7 @@ h1 {
   font-size: 1.1rem;
 }
 
+/* Input section container: Uses flexbox for layout, allows wrapping, adds gap and bottom margin */
 .input-section {
   display: flex;
   flex-wrap: wrap;
@@ -40,6 +46,7 @@ h1 {
   margin-bottom: 2rem;
 }
 
+/* Grade input field: Takes available space, adds padding, font size, border, radius, and transition */
 #grade-input {
   flex: 1;
   padding: 12px 15px;
@@ -49,11 +56,13 @@ h1 {
   transition: border-color 0.3s;
 }
 
+/* Grade input field focus state: Removes outline and changes border color */
 #grade-input:focus {
   outline: none;
   border-color: #3498db;
 }
 
+/* General button styles: Sets padding, text color, removes border, adds radius, cursor, font size/weight, and transition */
 button {
   padding: 12px 20px;
   color: white;
@@ -65,35 +74,43 @@ button {
   transition: background 0.3s;
 }
 
+/* Add Grade button: Sets background color */
 #add-btn {
   background: #3498db;
 }
 
+/* Add Grade button hover state: Darkens background color */
 #add-btn:hover {
   background: #2980b9;
 }
 
+/* Analyze Grades button: Sets background color */
 #analyze-btn {
   background: #27ae60;
 }
 
+/* Analyze Grades button hover state (when not disabled): Darkens background color */
 #analyze-btn:hover:not([disabled]) {
   background: #219653;
 }
 
+/* Analyze Grades button disabled state: Sets background color and changes cursor */
 #analyze-btn[disabled] {
   background: #95a5a6;
   cursor: not-allowed;
 }
 
+/* Reset button: Sets background color */
 #reset-btn {
   background: #e74c3c;
 }
 
+/* Reset button hover state: Darkens background color */
 #reset-btn:hover {
   background: #c0392b;
 }
 
+/* Grades container: Adds margin, padding, background, border radius, and border */
 .grades-container {
   margin-bottom: 2rem;
   padding: 1.5rem;
@@ -102,6 +119,7 @@ button {
   border: 1px solid #e9ecef;
 }
 
+/* Grades list container: Uses flexbox (column), adds gap, margin, height constraints, overflow, and padding */
 .grades-list {
   display: flex;
   flex-direction: column;
@@ -113,18 +131,21 @@ button {
   padding-right: 10px;
 }
 
+/* Individual grade item container: Uses flexbox to align items and adds bottom margin */
 .grade-item {
   display: flex;
   align-items: center;
   margin-bottom: 8px;
 }
 
+/* Student index span: Sets font weight, margin, and minimum width */
 .student-index {
   font-weight: bold;
   margin-right: 10px;
   min-width: 80px;
 }
 
+/* Grade pill element: Styles the visual representation of a grade */
 .grade-pill {
   display: inline-block;
   padding: 8px 16px;
@@ -135,27 +156,33 @@ button {
   margin-bottom: 0.5rem;
 }
 
+/* Fail grade pill: Sets background color for failing grades */
 .fail {
   background-color: #e74c3c;
 }
 
+/* Pass grade pill: Sets background color for passing grades */
 .pass {
   background-color: #f39c12;
 }
 
+/* Good grade pill: Sets background color for good grades */
 .good {
   background-color: #3498db;
 }
 
+/* Excellent grade pill: Sets background color for excellent grades */
 .excellent {
   background-color: #27ae60;
 }
 
+/* Empty message paragraph: Sets color and font style for placeholder text */
 .empty-message {
   color: #95a5a6;
   font-style: italic;
 }
 
+/* Results section container: Sets background, padding, border radius, and border */
 .results {
   background: #eaf7fd;
   padding: 1.5rem;
@@ -163,6 +190,7 @@ button {
   border: 1px solid #c5e8fa;
 }
 
+/* Result card container: Sets background, padding, margin, border radius, and shadow */
 .result-card {
   background: white;
   padding: 1.2rem;
@@ -171,6 +199,7 @@ button {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
+/* Result card heading: Sets margin, color, border, and padding */
 .result-card h3 {
   margin-bottom: 1rem;
   color: #3498db;
@@ -178,6 +207,7 @@ button {
   padding-bottom: 0.5rem;
 }
 
+/* Individual result item container: Uses flexbox to space items, adds padding and border */
 .result-item {
   display: flex;
   justify-content: space-between;
@@ -185,10 +215,12 @@ button {
   border-bottom: 1px dashed #eee;
 }
 
+/* Last result item: Removes the bottom border */
 .result-item:last-child {
   border-bottom: none;
 }
 
+/* Grades display container (in results): Uses flexbox (column), adds gap, margin, height constraints, overflow, and padding */
 .grades-display {
   display: flex;
   flex-direction: column;
@@ -199,15 +231,19 @@ button {
   padding-right: 10px;
 }
 
+/* Hidden class: Hides elements */
 .hidden {
   display: none;
 }
 
+/* Media query for smaller screens (max-width 600px) */
 @media (max-width: 600px) {
+  /* Input section on small screens: Stacks elements vertically */
   .input-section {
     flex-direction: column;
   }
 
+  /* Buttons on small screens: Makes buttons full width */
   button {
     width: 100%;
   }

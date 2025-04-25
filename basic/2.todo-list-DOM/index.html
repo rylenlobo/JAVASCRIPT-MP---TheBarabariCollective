@@ -4,33 +4,50 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Modern Todo List</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
     <link rel="stylesheet" href="index.css" />
   </head>
   <body>
+    <!-- Main container for the to-do list application -->
     <div class="container">
+      <!-- Header section with the title -->
       <header>
         <h1><i class="fas fa-check-circle"></i> My Todo List</h1>
       </header>
-      
+
+      <!-- Input section for adding new tasks -->
       <div class="input-container">
+        <!-- Text input for the new task -->
         <input type="text" id="new-task" placeholder="What needs to be done?" />
+        <!-- Button to add the new task -->
         <button id="add-task-btn"><i class="fas fa-plus"></i></button>
       </div>
-      
+
+      <!-- Filter buttons section -->
       <div class="filters">
+        <!-- Button to show all tasks -->
         <button class="filter-btn active" data-filter="all">All</button>
+        <!-- Button to show only active tasks -->
         <button class="filter-btn" data-filter="active">Active</button>
+        <!-- Button to show only completed tasks -->
         <button class="filter-btn" data-filter="completed">Completed</button>
       </div>
-      
+
+      <!-- Unordered list to display the tasks -->
       <ul id="task-list"></ul>
-      
+
+      <!-- Footer section showing task count and clear completed button -->
       <div class="list-footer">
+        <!-- Span to display the count of remaining tasks -->
         <span id="tasks-counter">0 items left</span>
+        <!-- Button to clear all completed tasks -->
         <button id="clear-completed">Clear completed</button>
       </div>
     </div>
+    <!-- Link to the JavaScript file -->
     <script src="index.js"></script>
   </body>
 </html>

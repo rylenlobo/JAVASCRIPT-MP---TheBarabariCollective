@@ -4,37 +4,51 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Recursive Palindrome Checker</title>
+    <!-- Link to the external stylesheet -->
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <!-- Main container for the application content -->
     <div class="container">
+      <!-- Main heading -->
       <h1>Palindrome Checker</h1>
+      <!-- Description of what a palindrome is -->
       <p class="description">
         A palindrome is a word, phrase, number, or sequence that reads the same
         backward as forward (ignoring spaces, punctuation, and capitalization).
       </p>
 
+      <!-- Section containing the input field and check button -->
       <div class="input-section">
+        <!-- Text input for user to enter word/phrase -->
         <input
           type="text"
           id="palindrome-input"
           placeholder="Enter a word or phrase..."
         />
+        <!-- Button to trigger the palindrome check -->
         <button id="check-btn">Check</button>
       </div>
 
+      <!-- Section to display the result and comparison steps -->
       <div class="result-section">
+        <!-- Area where the final result (palindrome or not) is shown -->
         <div id="result" class="hidden">
+          <!-- Displays the text result (e.g., "is a palindrome") -->
           <h2 id="result-text"></h2>
+          <!-- Displays an emoji related to the result -->
           <div id="result-emoji"></div>
         </div>
 
+        <!-- Area to display the step-by-step comparison process -->
         <div id="comparison-steps" class="hidden">
           <h3>Step-by-Step Comparison:</h3>
+          <!-- Unordered list to hold the individual comparison steps -->
           <ul id="steps-list"></ul>
         </div>
       </div>
 
+      <!-- Informational section with examples of palindromes -->
       <div class="info-section">
         <h3>Examples of palindromes:</h3>
         <ul>
@@ -46,6 +60,7 @@
       </div>
     </div>
 
+    <!-- Link to the external JavaScript file -->
     <script src="script.js"></script>
   </body>
 </html>

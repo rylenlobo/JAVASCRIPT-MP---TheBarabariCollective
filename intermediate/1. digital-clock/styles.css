@@ -1,3 +1,4 @@
+/* Universal selector: Resets margin, padding, sets box-sizing, and default font */
 * {
   margin: 0;
   padding: 0;
@@ -5,6 +6,7 @@
   font-family: "Arial", sans-serif;
 }
 
+/* Body styles: Centers content, sets background gradient and text color */
 body {
   display: flex;
   justify-content: center;
@@ -14,6 +16,7 @@ body {
   color: #fff;
 }
 
+/* Clock container styles: Sets alignment, padding, background, border, shadow, and blur effect */
 .clock-container {
   text-align: center;
   padding: 2rem;
@@ -23,24 +26,28 @@ body {
   backdrop-filter: blur(5px);
 }
 
+/* Heading styles: Sets margin, font size, and color */
 h1 {
   margin-bottom: 2rem;
   font-size: 1.8rem;
   color: #e94560;
 }
 
+/* Time display styles: Sets font size, margin, and text shadow */
 .time {
   font-size: 4rem;
   margin-bottom: 1rem;
   text-shadow: 0 0 10px rgba(233, 69, 96, 0.7);
 }
 
+/* Date display styles: Sets font size, margin, and color */
 .date {
   font-size: 1.5rem;
   margin-bottom: 2rem;
   color: #dadada;
 }
 
+/* Button styles: Sets padding, background, border, color, font size, cursor, and transition */
 button {
   padding: 10px 20px;
   background: #e94560;
@@ -52,6 +59,7 @@ button {
   transition: all 0.3s ease;
 }
 
+/* Button hover styles: Changes background color and scales the button */
 button:hover {
   background: #cf3b54;
   transform: scale(1.05);

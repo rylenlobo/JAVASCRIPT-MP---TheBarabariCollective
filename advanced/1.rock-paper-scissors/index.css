@@ -1,3 +1,4 @@
+/* Basic body styling: sets font, centers content, defines background and text color. */
 body {
   font-family: "Arial", sans-serif;
   margin: 0;
@@ -10,6 +11,7 @@ body {
   color: white;
 }
 
+/* Main game container styling: sets max width, padding, background, border radius, and shadow. */
 .container {
   max-width: 600px;
   width: 100%;
@@ -19,6 +21,7 @@ body {
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
 }
 
+/* Game title styling: centers text, sets font size, margin, and color. */
 .game-title {
   text-align: center;
   font-size: 2.5rem;
@@ -26,12 +29,14 @@ body {
   color: #f7fafc;
 }
 
+/* Choices section styling: uses flexbox to arrange buttons and adds margin. */
 .choices {
   display: flex;
   justify-content: space-between;
   margin-bottom: 2rem;
 }
 
+/* Individual choice button styling: sets background, color, padding, font size, border radius, cursor, and transitions. */
 .choice-btn {
   background-color: #4a5568;
   color: white;
@@ -43,11 +48,13 @@ body {
   transition: background-color 0.3s, transform 0.2s;
 }
 
+/* Choice button hover effect: changes background color and adds a slight lift. */
 .choice-btn:hover {
   background-color: #2b6cb0;
   transform: translateY(-3px);
 }
 
+/* Game information display area styling: sets background, border radius, padding, and margin. */
 .game-info {
   background-color: #4a5568;
   border-radius: 0.5rem;
@@ -55,11 +62,13 @@ body {
   margin-bottom: 2rem;
 }
 
+/* Player/computer choice display styling: sets margin and font size. */
 .choice-display {
   margin-bottom: 0.5rem;
   font-size: 1.1rem;
 }
 
+/* Result display styling: sets font size, weight, alignment, margin, padding, and border radius. */
 .result {
   font-size: 1.5rem;
   font-weight: bold;
@@ -69,6 +78,7 @@ body {
   border-radius: 0.25rem;
 }
 
+/* Scoreboard styling: uses flexbox to arrange scores, sets font size and margin. */
 .score-board {
   display: flex;
   justify-content: space-between;
@@ -76,6 +86,7 @@ body {
   margin-bottom: 1.5rem;
 }
 
+/* Reset button styling: makes it a block element, sets width, background, color, padding, border radius, font size, cursor, and transition. */
 .reset-btn {
   display: block;
   width: 100%;
@@ -89,18 +100,22 @@ body {
   transition: background-color 0.3s;
 }
 
+/* Reset button hover effect: darkens the background color. */
 .reset-btn:hover {
   background-color: #c53030;
 }
 
+/* Win result styling: sets a green background color. */
 .win {
   background-color: #48bb78;
 }
 
+/* Lose result styling: sets a red background color. */
 .lose {
   background-color: #e53e3e;
 }
 
+/* Tie result styling: sets a gray background color. */
 .tie {
   background-color: #718096;
 }

@@ -1,3 +1,4 @@
+/* Universal selector: Resets margin/padding, sets box-sizing, and default font */
 * {
   margin: 0;
   padding: 0;
@@ -5,12 +6,14 @@
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
+/* Body element: Sets background color, text color, and line height */
 body {
   background-color: #f5f5f5;
   color: #333;
   line-height: 1.6;
 }
 
+/* Container class: Styles the main content wrapper */
 .container {
   max-width: 800px;
   margin: 2rem auto;
@@ -20,12 +23,14 @@ body {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
+/* H1 element: Styles the main heading */
 h1 {
   text-align: center;
   margin-bottom: 1rem;
   color: #2c3e50;
 }
 
+/* Description class: Styles the introductory paragraph */
 .description {
   text-align: center;
   margin-bottom: 2rem;
@@ -33,11 +38,13 @@ h1 {
   font-size: 1.1rem;
 }
 
+/* Input section class: Styles the container for the input field and button */
 .input-section {
   display: flex;
   margin-bottom: 2rem;
 }
 
+/* Palindrome input ID: Styles the text input field */
 #palindrome-input {
   flex: 1;
   padding: 12px 15px;
@@ -47,11 +54,13 @@ h1 {
   transition: border-color 0.3s;
 }
 
+/* Palindrome input focus state: Styles the input field when focused */
 #palindrome-input:focus {
   outline: none;
   border-color: #3498db;
 }
 
+/* Check button ID: Styles the button */
 #check-btn {
   padding: 12px 20px;
   background: #3498db;
@@ -64,14 +73,17 @@ h1 {
   transition: background 0.3s;
 }
 
+/* Check button hover state: Styles the button on mouse hover */
 #check-btn:hover {
   background: #2980b9;
 }
 
+/* Result section class: Adds margin below the result area */
 .result-section {
   margin-bottom: 2rem;
 }
 
+/* Result ID: Styles the main result display area */
 #result {
   text-align: center;
   padding: 1.5rem;
@@ -80,21 +92,25 @@ h1 {
   transition: all 0.3s;
 }
 
+/* Is-palindrome class (on result ID): Styles the result area for a palindrome */
 #result.is-palindrome {
   background-color: #d4edda;
   border: 1px solid #c3e6cb;
 }
 
+/* Not-palindrome class (on result ID): Styles the result area for a non-palindrome or error */
 #result.not-palindrome {
   background-color: #f8d7da;
   border: 1px solid #f5c6cb;
 }
 
+/* Result emoji ID: Styles the emoji displayed in the result area */
 #result-emoji {
   font-size: 3rem;
   margin-top: 0.5rem;
 }
 
+/* Comparison steps ID: Styles the container for the step-by-step comparison */
 #comparison-steps {
   padding: 1rem;
   background: #f8f9fa;
@@ -102,11 +118,13 @@ h1 {
   border: 1px solid #e9ecef;
 }
 
+/* Steps list ID: Styles the unordered list holding the comparison steps */
 #steps-list {
   list-style-type: none;
   margin-top: 1rem;
 }
 
+/* List items within steps list: Styles individual comparison steps */
 #steps-list li {
   padding: 0.8rem;
   margin-bottom: 0.5rem;
@@ -116,20 +134,24 @@ h1 {
   align-items: center;
 }
 
+/* Odd list items within steps list: Applies alternating background color */
 #steps-list li:nth-child(odd) {
   background-color: #e9ecef;
 }
 
+/* Step match class: Styles the text indicating a character match */
 .step-match {
   color: #28a745;
   font-weight: bold;
 }
 
+/* Step mismatch class: Styles the text indicating a character mismatch */
 .step-mismatch {
   color: #dc3545;
   font-weight: bold;
 }
 
+/* Info section class: Styles the informational box with examples */
 .info-section {
   background: #e9f7fe;
   padding: 1.5rem;
@@ -137,16 +159,19 @@ h1 {
   border: 1px solid #c5e8fa;
 }
 
+/* H3 within info section: Styles the heading in the info box */
 .info-section h3 {
   margin-bottom: 0.8rem;
   color: #3498db;
 }
 
+/* Unordered list within info section: Styles the list of examples */
 .info-section ul {
   list-style-type: circle;
   padding-left: 2rem;
 }
 
+/* Hidden class: Utility class to hide elements */
 .hidden {
   display: none;
 }
