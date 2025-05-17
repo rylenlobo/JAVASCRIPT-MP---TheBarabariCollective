@@ -1,0 +1,430 @@
+/* Imports Google Fonts Poppins */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+/* Defines root CSS variables for theming */
+:root {
+  --primary-color: #4a90e2; /* A nice blue, can be adjusted */
+  --secondary-color: #f5a623; /* Accent orange/yellow */
+  --text-color: #333333;
+  --light-text-color: #555555;
+  --background-color: #f7f8fc; /* Light, almost white background */
+  --card-background-color: #ffffff;
+  --border-color: #e0e0e0;
+  --border-radius-sm: 8px;
+  --border-radius-md: 12px;
+  --box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  --font-family: "Poppins", sans-serif;
+}
+
+/* Styles for the body element with the light-theme class */
+body.light-theme {
+  font-family: var(--font-family);
+  margin: 0;
+  padding: 0;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.6;
+  display: flex;
+  justify-content: center;
+  padding-top: 20px; /* Add some padding at the top */
+}
+
+/* Styles for the main container div */
+.container {
+  width: 100%;
+  max-width: 900px; /* Max width for the main content area */
+  padding: 0 15px;
+  box-sizing: border-box;
+}
+
+/* Styles for the header element */
+header {
+  background: transparent; /* Remove default header background */
+  color: var(--text-color);
+  padding: 2rem 0 1.5rem; /* Increased padding */
+  text-align: center;
+}
+
+/* Styles for h1 elements within the header */
+header h1 {
+  margin: 0 0 1.5rem 0; /* Space below title */
+  font-size: 2.8rem; /* Larger title */
+  font-weight: 600;
+}
+
+/* Styles for the search bar wrapper div */
+.search-bar-wrapper {
+  position: relative;
+  max-width: 500px;
+  margin: 0 auto 1.5rem auto; /* Center and add margin */
+}
+
+/* Styles for the search input field */
+#searchInput {
+  width: 100%;
+  padding: 0.9rem 1rem; /* Increased padding */
+  padding-right: 3rem; /* Space for the icon button */
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-md); /* More rounded */
+  font-size: 1rem;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Styles for the search input field when focused */
+#searchInput:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.2);
+}
+
+/* Styles for the search button */
+#searchButton {
+  position: absolute;
+  right: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  padding: 0.6rem; /* Adjust padding for icon */
+  cursor: pointer;
+  color: var(--light-text-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Styles for SVG elements within the search button */
+#searchButton svg {
+  width: 20px; /* Slightly larger icon */
+  height: 20px;
+}
+
+/* Styles for elements with the class section-title */
+.section-title {
+  font-size: 1.8rem;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: var(--text-color);
+}
+
+/* Simulation Panel Styles - keeping them functional but slightly restyled */
+/* Styles for the simulation panel container */
+.simulation-panel-container {
+  margin: 2rem auto;
+  margin-top: 0;
+  max-width: 550px;
+  text-align: center;
+}
+
+/* Styles for the button that toggles the simulation panel */
+#toggleSimPanelButton {
+  background-color: var(--secondary-color);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: var(--border-radius-sm);
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+/* Styles for the toggle simulation panel button on hover */
+#toggleSimPanelButton:hover {
+  background-color: #e09015; /* Darker shade of secondary */
+}
+
+/* Styles for the simulation panel itself */
+.simulation-panel {
+  background-color: var(--card-background-color);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-md);
+  padding: 20px;
+  margin-top: 15px;
+  box-shadow: var(--box-shadow);
+  text-align: left;
+}
+
+/* Styles for h2 elements within the simulation panel */
+.simulation-panel h2 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+  color: var(--text-color);
+  font-weight: 600;
+  text-align: center;
+}
+
+/* Styles for div elements within the simulation panel */
+.simulation-panel div {
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Styles for label elements within the simulation panel */
+.simulation-panel label {
+  font-weight: 500;
+  margin-right: 10px;
+  font-size: 0.95rem;
+  color: var(--light-text-color);
+}
+
+/* Styles for checkbox inputs within the simulation panel */
+.simulation-panel input[type="checkbox"] {
+  margin-right: 5px;
+  accent-color: var(--primary-color); /* Style checkbox color */
+}
+
+/* Styles for number inputs within the simulation panel */
+.simulation-panel input[type="number"] {
+  padding: 6px 8px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-sm);
+  width: 70px;
+  font-size: 0.9rem;
+}
+
+/* Styles for the refetch/view button */
+.refetch-view-button {
+  display: block;
+  width: 100%;
+  background-color: var(--primary-color);
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: var(--border-radius-sm);
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 500;
+  margin-top: 15px;
+  transition: background-color 0.3s ease;
+}
+
+/* Styles for the refetch/view button on hover */
+.refetch-view-button:hover {
+  background-color: #3a7bc8; /* Darker primary */
+}
+
+/* Styles for elements with the class small-text */
+.small-text {
+  font-size: 0.85rem;
+  color: #777;
+  margin-top: 15px;
+  text-align: center;
+}
+
+/* Styles for the main content area */
+main {
+  padding: 0; /* Remove padding from main if container handles it */
+}
+
+/* Styles for the status messages container */
+#statusMessages {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+}
+
+/* Styles for the loading message paragraph */
+#loadingMessage {
+  color: var(--primary-color);
+}
+
+/* Styles for the error message paragraph */
+#errorMessage {
+  color: #d9534f;
+  background-color: #f2dede;
+  border: 1px solid #ebccd1;
+  padding: 10px;
+  border-radius: var(--border-radius-sm);
+}
+
+/* Styles for the recipes grid container */
+.recipes-grid {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(250px, 1fr)
+  ); /* Adjust for potentially smaller cards */
+  gap: 1.8rem; /* Increased gap */
+}
+
+/* Styles for individual recipe cards */
+.recipe-card {
+  background: var(--card-background-color);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--box-shadow);
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  overflow: hidden;
+  display: flex; /* Added for structure */
+  flex-direction: column; /* Added for structure */
+}
+
+/* Styles for recipe cards on hover */
+.recipe-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Styles for links within recipe cards */
+.recipe-link {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* Styles for recipe card images */
+.recipe-card-image {
+  width: 100%;
+  height: 180px; /* Adjust height as needed */
+  object-fit: cover;
+  border-bottom: 1px solid var(--border-color); /* Optional: if image doesn't have its own bg */
+}
+
+/* Styles for the content area of recipe cards */
+.recipe-card-content {
+  padding: 1rem;
+  text-align: center; /* Center title as per image */
+  flex-grow: 1; /* Allow content to grow */
+  display: flex; /* For centering title if needed */
+  flex-direction: column; /* For centering title if needed */
+  justify-content: center; /* For centering title if needed */
+}
+
+/* Styles for h3 elements within recipe card content */
+.recipe-card-content h3 {
+  margin: 0; /* Remove default margins */
+  font-size: 1.25rem; /* Adjust size */
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+/* Remove details and tags from the main card view as per the image */
+/* Styles for recipe card details and tags (currently set to display: none) */
+.recipe-card-details,
+.recipe-card-tags {
+  display: none;
+}
+
+/* Styles for the message displayed when no recipes are found */
+.no-recipes-message {
+  font-size: 1.1rem;
+  color: var(--light-text-color);
+  text-align: center;
+  padding: 2rem;
+}
+
+/* Styles for the footer element */
+footer {
+  text-align: center;
+  padding: 2rem 0;
+  margin-top: 3rem;
+  color: var(--light-text-color);
+  font-size: 0.9rem;
+}
+
+/* Responsive adjustments */
+/* Styles for screens with a max-width of 768px */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 2.2rem;
+  }
+
+  .recipes-grid {
+    grid-template-columns: repeat(auto-fit, 1fr);
+    gap: 1rem;
+  }
+  .recipe-card-image {
+    height: 160px;
+  }
+  .recipe-card-content h3 {
+    font-size: 1.1rem;
+  }
+  .section-title {
+    font-size: 1.5rem;
+  }
+}
+
+/* Styles for screens with a max-width of 480px */
+@media (max-width: 480px) {
+  body.light-theme {
+    padding-top: 10px;
+  }
+  .container {
+    padding: 0 20px;
+  }
+  header h1 {
+    font-size: 1.8rem;
+  }
+  #searchInput {
+    padding: 0.8rem;
+    padding-right: 2.5rem;
+    font-size: 0.9rem;
+  }
+  #searchButton svg {
+    width: 18px;
+    height: 18px;
+  }
+  .filter-nav {
+    gap: 0.4rem;
+  }
+  .filter-button {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.8rem;
+  }
+  .recipes-grid {
+    grid-template-columns: 1fr; /* Single column on very small screens */
+    gap: 1rem;
+  }
+  .recipe-card-image {
+    height: 180px; /* Can be larger in single column */
+  }
+  .simulation-panel div {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .simulation-panel input[type="number"] {
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 5px;
+  }
+  .simulation-panel label {
+    margin-bottom: 5px;
+  }
+  .refetch-view-button {
+    font-size: 0.9rem;
+    padding: 9px 12px;
+  }
+}
+
+/* Spinner Styles */
+/* Styles for the loading spinner element */
+.spinner {
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border-left-color: var(
+    --primary-color
+  ); /* Use primary color for the spinner accent */
+  animation: spin 1s ease infinite;
+  margin: 20px auto; /* Center the spinner */
+  display: none; /* Hidden by default */
+}
+
+/* Keyframes for the spinner animation */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

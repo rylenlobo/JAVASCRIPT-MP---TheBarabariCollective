@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Meta tags for character set and viewport -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Title of the page -->
+    <title>Recipe Details</title>
+    <!-- Link to the main stylesheet -->
+    <link rel="stylesheet" href="style.css" />
+    <!-- Link to the recipe detail specific stylesheet -->
+    <link rel="stylesheet" href="recipe-detail.css" />
+  </head>
+  <body class="light-theme">
+    <!-- Main container for the page content -->
+    <div class="container">
+      <!-- Header section -->
+      <header>
+        <!-- Link to navigate back to the main recipes page -->
+        <a href="index.html" class="back-link">&larr; Back to Recipes</a>
+      </header>
+      <!-- Main content area -->
+      <main>
+        <!-- Container where recipe details will be loaded -->
+        <div id="recipeDetailContainer">
+          <!-- Recipe details will be loaded here by recipe-detail.js -->
+        </div>
+        <!-- Loading spinner element for recipe details -->
+        <div
+          class="spinner"
+          id="detailLoadingSpinner"
+          style="display: none"
+        ></div>
+        <!-- Message displayed while loading recipe details -->
+        <div id="detailLoadingMessage" style="display: none">
+          Loading recipe details...
+        </div>
+        <!-- Message displayed for errors when loading recipe details -->
+        <div id="detailErrorMessage" style="display: none"></div>
+      </main>
+
+      <!-- Footer section -->
+      <footer></footer>
+    </div>
+    <!-- .container -->
+    <!-- Script for simulation functionalities -->
+    <script src="simulation.js"></script>
+    <!-- Include simulation.js if needed here too -->
+    <!-- Script for recipe detail page functionalities -->
+    <script src="recipe-detail.js"></script>
+  </body>
+</html>

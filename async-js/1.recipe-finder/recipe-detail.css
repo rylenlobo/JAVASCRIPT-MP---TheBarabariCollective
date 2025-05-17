@@ -1,0 +1,298 @@
+/* recipe-detail.css */
+
+/* General body and container styles are largely inherited from style.css 
+   or set by recipe-detail.html linking style.css and its own body.light-theme class.
+   The .container class from style.css will center the content. */
+
+/* Styles for the header element on the recipe detail page */
+header {
+  padding: 1.5rem 0;
+  text-align: left;
+  border-bottom: 1px solid var(--border-color);
+  margin-bottom: 2rem;
+}
+
+/* Styles for the back link in the header */
+.back-link {
+  text-decoration: none;
+  color: var(--primary-color);
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+/* Styles for the back link on hover */
+.back-link:hover {
+  text-decoration: underline;
+}
+
+/* Main content area for the recipe details */
+/* Styles for the container of the recipe details */
+#recipeDetailContainer {
+  padding: 2rem;
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--box-shadow);
+}
+
+/* Recipe Image - assuming JS adds a class like 'recipe-image-large' or targets img directly */
+/* Styles for images within the recipe detail container (e.g., the main recipe image) */
+#recipeDetailContainer img {
+  width: 100%;
+  max-height: 450px; /* Adjusted to better match image proportion */
+  object-fit: cover;
+  border-radius: var(--border-radius-sm);
+  margin-bottom: 1.5rem;
+}
+
+/* Recipe Title - assuming JS adds a class like 'recipe-title' or targets h2 */
+/* Styles for h2 elements (e.g., recipe title) within the recipe detail container */
+#recipeDetailContainer h2 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--text-color);
+  text-align: left;
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+}
+
+/* Recipe Metadata Section */
+/* Styles for the recipe metadata container */
+.recipe-meta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start; /* Align items to the start */
+  align-items: flex-start;
+  padding: 1rem 0;
+  margin-bottom: 2rem;
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+  gap: 1.5rem; /* Adjust gap for closer grouping */
+}
+
+/* Styles for paragraph elements within the recipe metadata */
+.recipe-meta p {
+  margin: 0;
+}
+
+/* Styles for individual items within the recipe metadata */
+.meta-item {
+  min-width: 90px; /* Ensure items have some minimum width */
+  text-align: left;
+}
+
+/* Styles for labels within metadata items */
+.meta-item .meta-label {
+  display: block;
+  font-size: 0.8rem; /* Smaller label text */
+  color: var(--light-text-color);
+  margin-bottom: 0.35rem; /* Space between label and value */
+}
+
+/* Styles for values within metadata items */
+.meta-item .meta-value {
+  display: block;
+  font-size: 1rem; /* Value text */
+  font-weight: 500;
+  color: var(--text-color);
+}
+
+/* Styles for the star rating display within metadata items */
+.meta-item .star-rating {
+  display: flex;
+  align-items: center;
+  font-weight: 500; /* Ensure value is same weight */
+  color: var(--text-color); /* Rating text color */
+}
+
+/* Styles for SVG or character stars within the star rating */
+.meta-item .star-rating svg,
+.meta-item .star-rating .star-icon {
+  /* For character star or SVG */
+  width: 1em; /* Size relative to font */
+  height: 1em;
+  margin-right: 0.3em;
+  fill: var(--secondary-color); /* Star color */
+}
+
+/* Section Headings (Ingredients, Instructions) - assuming JS adds 'section-heading' or targets h3 */
+/* Styles for h3 elements (e.g., section titles like "Ingredients") within the recipe detail container */
+#recipeDetailContainer h3 {
+  font-size: 1.7rem;
+  font-weight: 600;
+  color: var(--text-color);
+  margin-top: 2.5rem;
+  margin-bottom: 1.2rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid var(--border-color); /* Consistent light border */
+}
+
+/* Lists for Ingredients and Instructions */
+/* Styles for unordered and ordered lists (e.g., ingredients, instructions) within the recipe detail container */
+#recipeDetailContainer ul,
+#recipeDetailContainer ol {
+  padding-left: 20px;
+  margin-bottom: 2rem;
+}
+
+/* Styles for list items within unordered and ordered lists */
+#recipeDetailContainer ul li,
+#recipeDetailContainer ol li {
+  font-size: 1rem;
+  line-height: 1.75;
+  margin-bottom: 0.7rem;
+  color: var(--text-color);
+  padding-bottom: 0.7rem; /* Space for border */
+  border-bottom: 1px solid #f0f0f0; /* Subtle separator line from image */
+}
+
+/* Styles for the last list item in unordered and ordered lists */
+#recipeDetailContainer ul li:last-child,
+#recipeDetailContainer ol li:last-child {
+  border-bottom: none; /* Remove border from the last item */
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+/* Styling for list markers (bullets/numbers) */
+/* Styles for markers of unordered list items */
+#recipeDetailContainer ul li::marker {
+  color: var(--text-color);
+}
+/* Styles for markers of ordered list items */
+#recipeDetailContainer ol li::marker {
+  color: var(--text-color);
+  font-weight: 500;
+}
+
+/* Tags Container (if used) */
+/* Styles for the container of recipe tags */
+.tags-container {
+  margin-top: 2.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border-color);
+}
+
+/* Styles for the heading of the tags container */
+.tags-container .tag-heading {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-color);
+  margin-bottom: 0.75rem;
+}
+
+/* Styles for individual tags */
+.tags-container .tag {
+  display: inline-block;
+  background-color: var(--secondary-color);
+  color: white;
+  padding: 0.4rem 0.9rem;
+  border-radius: 15px; /* Pill shape */
+  font-size: 0.8rem;
+  font-weight: 500;
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
+  text-decoration: none;
+}
+/* Styles for individual tags on hover */
+.tags-container .tag:hover {
+  background-color: #e09015; /* Darker shade of secondary */
+}
+
+/* Loading and Error Messages */
+/* Styles for loading and error message elements specific to recipe details */
+#detailLoadingMessage,
+#detailErrorMessage {
+  text-align: center;
+  font-size: 1.1rem;
+  padding: 2rem;
+  margin-top: 1rem; /* Space from header if content fails to load */
+}
+
+/* Styles for the detail loading message */
+#detailLoadingMessage {
+  color: var(--primary-color);
+}
+
+/* Styles for the detail error message */
+#detailErrorMessage {
+  color: #d9534f;
+  background-color: #f2dede;
+  border: 1px solid #ebccd1;
+  border-radius: var(--border-radius-sm);
+  padding: 1rem;
+}
+
+/* Footer styling is inherited from style.css */
+
+/* Responsive Adjustments */
+/* Styles for screens with a max-width of 768px */
+@media (max-width: 768px) {
+  #recipeDetailContainer {
+    padding: 1.5rem;
+  }
+  #recipeDetailContainer h2 {
+    /* Title */
+    font-size: 1.9rem;
+  }
+  #recipeDetailContainer h3 {
+    /* Section Headings */
+    font-size: 1.5rem;
+  }
+  .recipe-meta {
+    gap: 0.5rem 1rem; /* Adjust gap for wrapping */
+  }
+  .meta-item {
+    min-width: 80px; /* Adjust min-width for smaller screens */
+  }
+}
+
+/* Styles for screens with a max-width of 480px */
+@media (max-width: 480px) {
+  header {
+    padding: 1rem 0;
+    margin-bottom: 1.5rem;
+  }
+  .back-link {
+    font-size: 0.9rem;
+  }
+  #recipeDetailContainer {
+    padding: 1rem;
+    border-radius: var(--border-radius-sm);
+  }
+  #recipeDetailContainer h2 {
+    /* Title */
+    font-size: 1.6rem;
+  }
+  #recipeDetailContainer h3 {
+    /* Section Headings */
+    font-size: 1.3rem;
+  }
+  #recipeDetailContainer ul,
+  #recipeDetailContainer ol {
+    padding-left: 18px; /* Slightly less padding */
+  }
+  #recipeDetailContainer ul li,
+  #recipeDetailContainer ol li {
+    font-size: 0.9rem;
+    line-height: 1.65;
+    margin-bottom: 0.6rem;
+  }
+  .recipe-meta {
+    flex-direction: column; /* Stack meta items on very small screens */
+    align-items: flex-start; /* Align items to the start when stacked */
+    gap: 0.8rem;
+  }
+  .meta-item {
+    width: 100%; /* Full width when stacked */
+    padding-bottom: 0.5rem;
+    border-bottom: 1px dashed var(--border-color); /* Separator for stacked items */
+  }
+  .meta-item:last-child {
+    border-bottom: none;
+  }
+  .meta-item .meta-label {
+    font-size: 0.75rem;
+  }
+  .meta-item .meta-value {
+    font-size: 0.95rem;
+  }
+}

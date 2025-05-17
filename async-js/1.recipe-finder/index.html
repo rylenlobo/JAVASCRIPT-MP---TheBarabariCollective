@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Meta tags for character set and viewport -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Title of the page -->
+    <title>Recipe Finder</title>
+    <!-- Link to the main stylesheet -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="light-theme">
+    <!-- Main container for the page content -->
+    <div class="container">
+      <!-- Header section -->
+      <header>
+        <!-- Main heading -->
+        <h1>Recipe Finder</h1>
+        <!-- Wrapper for the search bar -->
+        <div class="search-bar-wrapper">
+          <!-- Input field for recipe search -->
+          <input type="text" id="searchInput" placeholder="Search recipes..." />
+          <!-- Button to trigger search -->
+          <button id="searchButton">
+            <!-- Search icon -->
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-search"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"
+              />
+            </svg>
+          </button>
+        </div>
+      </header>
+
+      <!-- Container for simulation panel controls -->
+      <aside class="simulation-panel-container">
+        <!-- Button to toggle simulation panel visibility -->
+        <button id="toggleSimPanelButton">Toggle Simulation Controls</button>
+        <!-- Simulation panel for controlling API call simulations -->
+        <div
+          id="simulationPanel"
+          class="simulation-panel"
+          style="display: none"
+        >
+          <!-- Heading for simulation controls -->
+          <h2>Simulation Controls</h2>
+          <!-- Controls for simulating delay -->
+          <div>
+            <label for="simulateDelayToggle">Simulate Delay:</label>
+            <input type="checkbox" id="simulateDelayToggle" />
+          </div>
+          <!-- Controls for setting delay duration -->
+          <div>
+            <label for="delayDurationInput">Delay (ms):</label>
+            <input type="number" id="delayDurationInput" value="1000" min="0" />
+          </div>
+          <!-- Button to apply simulation settings -->
+          <button
+            id="applySimSettingsButton"
+            class="refetch-view-button"
+            style="margin-top: 10px"
+          >
+            Apply Settings
+          </button>
+        </div>
+      </aside>
+
+      <!-- Main content area -->
+      <main>
+        <!-- Container for status messages (loading, error) -->
+        <div id="statusMessages">
+          <!-- Loading spinner element -->
+          <div class="spinner" id="loadingSpinner" style="display: none"></div>
+          <!-- Message displayed while loading recipes -->
+          <p id="loadingMessage" style="display: none">Loading recipes...</p>
+          <!-- Message displayed for errors -->
+          <p id="errorMessage" style="display: none"></p>
+        </div>
+        <!-- Container where recipes will be displayed -->
+        <div id="recipesContainer" class="recipes-grid">
+          <!-- Recipes will be loaded here -->
+        </div>
+      </main>
+
+      <!-- Footer section -->
+      <footer></footer>
+    </div>
+    <!-- .container -->
+    <!-- Script for simulation functionalities -->
+    <script src="simulation.js"></script>
+    <!-- Main script for the page -->
+    <script src="script.js"></script>
+  </body>
+</html>
