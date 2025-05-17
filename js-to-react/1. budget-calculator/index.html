@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Budget Calculator</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Main container for the entire application -->
+    <div class="container">
+      <header>
+        <h1>Budget Calculator</h1>
+        <!-- Card displaying current balance, total income, and total expenses -->
+        <div class="balance-card">
+          <h2>Your Balance</h2>
+          <h1 id="balance">$0.00</h1>
+          <!-- Container for displaying income and expense summaries -->
+          <div class="income-expense">
+            <div>
+              <h4>Income</h4>
+              <p id="money-plus" class="money plus">+$0.00</p>
+            </div>
+            <div>
+              <h4>Expense</h4>
+              <p id="money-minus" class="money minus">-$0.00</p>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- Section for adding new income or expense transactions -->
+      <section id="transaction-form">
+        <h3>Add New Transaction</h3>
+        <!-- Form for users to input new transaction details -->
+        <form id="form">
+          <div class="form-control">
+            <label for="category">Category</label>
+            <input
+              type="text"
+              id="category"
+              placeholder="Enter category..."
+              list="categories"
+              required
+            />
+            <!-- Datalist provides predefined options for the category input -->
+            <datalist id="categories">
+              <option value="Salary"></option>
+              <option value="Rent"></option>
+              <option value="Food"></option>
+              <option value="Utilities"></option>
+              <option value="Transportation"></option>
+              <option value="Entertainment"></option>
+              <option value="Other"></option>
+            </datalist>
+          </div>
+          <div class="form-control">
+            <label for="amount">Amount</label>
+            <input
+              type="number"
+              id="amount"
+              placeholder="Enter amount..."
+              required
+            />
+          </div>
+          <div class="form-control">
+            <label for="type">Type</label>
+            <select id="type" required>
+              <option value="income">Income</option>
+              <option value="expense">Expense</option>
+            </select>
+          </div>
+          <button type="submit" class="btn">Add Transaction</button>
+        </form>
+      </section>
+
+      <!-- Section for managing borrowed and lent money -->
+      <section id="borrowing-lending">
+        <h3>Borrowing & Lending</h3>
+        <!-- Form for users to input loan details -->
+        <form id="loan-form">
+          <div class="form-control">
+            <label for="person-name">Person</label>
+            <input
+              type="text"
+              id="person-name"
+              placeholder="Enter person's name..."
+              required
+            />
+          </div>
+          <div class="form-control">
+            <label for="loan-amount">Amount</label>
+            <input
+              type="number"
+              id="loan-amount"
+              placeholder="Enter amount..."
+              required
+            />
+          </div>
+          <div class="form-control">
+            <label for="loan-type">Type</label>
+            <select id="loan-type" required>
+              <option value="lent">Money I Lent</option>
+              <option value="borrowed">Money I Borrowed</option>
+              <option value="returned">Money Returned To Me</option>
+              <option value="repaid">Money I Repaid</option>
+            </select>
+          </div>
+          <button type="submit" class="btn">Add Loan Record</button>
+        </form>
+
+        <h3>Loan Records</h3>
+        <!-- Unordered list to display loan records -->
+        <ul id="loan-list" class="list">
+          <!-- Loan records will be added here dynamically by JavaScript -->
+        </ul>
+      </section>
+
+      <!-- Section to display the history of transactions -->
+      <section id="transaction-list">
+        <h3>Transaction History</h3>
+        <!-- Unordered list to display transactions -->
+        <ul id="list" class="list">
+          <!-- Transactions will be added here dynamically by JavaScript -->
+        </ul>
+      </section>
+
+      <!-- Section for setting and displaying the budget limit -->
+      <section id="budget-limit">
+        <h3>Budget Limit</h3>
+        <!-- Controls for setting the budget limit -->
+        <div class="form-control">
+          <label for="budget-amount">Set Budget Limit</label>
+          <input
+            type="number"
+            id="budget-amount"
+            placeholder="Enter budget limit..."
+          />
+          <button id="set-budget" class="btn">Set Budget</button>
+        </div>
+        <!-- Warning message displayed if budget is exceeded -->
+        <div id="budget-warning" class="warning hidden">
+          You are over your budget limit!
+        </div>
+      </section>
+    </div>
+
+    <!-- Link to the JavaScript file that handles the application logic -->
+    <script src="script.js"></script>
+  </body>
+</html>
