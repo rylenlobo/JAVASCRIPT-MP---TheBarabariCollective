@@ -1,0 +1,278 @@
+/* filepath: c:\Users\Rylen\Desktop\JAVASCRIPT MP -TheBarabariCollectiv\js-to-react\2. movie-collection-manager\style.css */
+
+/* CSS Variables - Define color palette and common values */
+:root {
+  --primary-color: #3a506b;
+  --secondary-color: #5bc0be;
+  --accent-color: #0b132b;
+  --text-color: #1c2541;
+  --light-bg: #f8f9fa;
+  --border-color: #dee2e6;
+  --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --hover-color: #edf2f7;
+  --rating-high: #48bb78;
+  --rating-medium: #ecc94b;
+  --rating-low: #e53e3e;
+}
+
+/* Global Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Base body styles - sets the main document appearance */
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--light-bg);
+  color: var(--text-color);
+  line-height: 1.6;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Heading styles */
+h1,
+h2,
+h3 {
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+/* Main title styling with decorative underline */
+h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin: 2rem 0;
+  position: relative;
+}
+
+h1::after {
+  content: "";
+  display: block;
+  width: 100px;
+  height: 4px;
+  background-color: var(--secondary-color);
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 2px;
+}
+
+/* Main app layout - grid system for responsive design */
+.app-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 2rem;
+}
+
+/* Responsive adjustment for mobile devices */
+@media (max-width: 900px) {
+  .app-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Sidebar controls panel styling */
+.controls {
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: var(--card-shadow);
+  position: sticky;
+  top: 20px;
+  height: fit-content;
+}
+
+/* Form element spacing */
+#add-movie-form > div,
+.filter-control {
+  margin-bottom: 1rem;
+}
+
+/* Form label styling */
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: var(--primary-color);
+}
+
+/* Form input and select styling */
+input,
+select {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: border-color 0.2s ease-in-out;
+}
+
+/* Form input focus states */
+input:focus,
+select:focus {
+  outline: none;
+  border-color: var(--secondary-color);
+  box-shadow: 0 0 0 2px rgba(91, 192, 190, 0.2);
+}
+
+/* Button styling */
+button {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.2s ease-in-out;
+  margin-top: 0.5rem;
+}
+
+/* Button hover effects */
+button:hover {
+  background-color: var(--accent-color);
+}
+
+/* Reset filters button specific styling */
+button#reset-filters {
+  background-color: #6c757d;
+}
+
+/* Reset filters button hover effects */
+button#reset-filters:hover {
+  background-color: #5a6268;
+}
+
+/* Filter container styling */
+.filter-container {
+  margin: 1.5rem 0;
+  border-top: 1px solid var(--border-color);
+  padding-top: 1.5rem;
+}
+
+/* Movie list container styling */
+#movie-list-container {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: var(--card-shadow);
+  padding: 1.5rem;
+}
+
+/* Individual movie card styling */
+.movie-card {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 1rem;
+  align-items: center;
+  padding: 1rem;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+  background-color: white;
+  border-left: 4px solid var(--primary-color);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Movie card hover effects */
+.movie-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Movie information section styling */
+.movie-info {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Movie title styling */
+.movie-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--accent-color);
+  margin-bottom: 0.25rem;
+}
+
+/* Movie meta information styling */
+.movie-meta {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* Movie genre badge styling */
+.movie-genre {
+  display: inline-block;
+  background-color: #e2e8f0;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  margin-top: 0.5rem;
+}
+
+/* Movie rating circle styling */
+.movie-rating {
+  font-weight: bold;
+  font-size: 1.2rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  color: white;
+}
+
+/* High rating specific styling */
+.high-rating {
+  background-color: var(--rating-high);
+}
+
+/* Medium rating specific styling */
+.medium-rating {
+  background-color: var(--rating-medium);
+}
+
+/* Low rating specific styling */
+.low-rating {
+  background-color: var(--rating-low);
+}
+
+/* Notification toast styling */
+.notification {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 0.75rem 1.5rem;
+  background-color: var(--secondary-color);
+  color: white;
+  border-radius: 4px;
+  box-shadow: var(--card-shadow);
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 1000;
+}
+
+/* Notification visible state */
+.notification.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Empty state styling when no movies are found */
+.empty-state {
+  text-align: center;
+  padding: 2rem;
+  color: #6c757d;
+}
+
+/* Empty state paragraph styling */
+.empty-state p {
+  margin-top: 1rem;
+  font-size: 1.1rem;
+}

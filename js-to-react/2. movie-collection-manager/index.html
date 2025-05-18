@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Movie Collection Manager</title>
+    <!-- CSS styling for the Movie Collection Manager -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Main heading -->
+    <h1>Movie Collection Manager</h1>
+
+    <!-- Main app container with grid layout -->
+    <div class="app-container">
+      <!-- Left sidebar with controls -->
+      <div class="controls">
+        <!-- Add Movie Form Section -->
+        <h2>Add Movie</h2>
+        <form id="add-movie-form">
+          <div>
+            <label for="title">Title</label>
+            <input
+              type="text"
+              id="title"
+              required
+              placeholder="Enter movie title"
+            />
+          </div>
+          <div>
+            <label for="genre">Genre</label>
+            <!-- Genre input with datalist for autocomplete suggestions -->
+            <input
+              type="text"
+              id="genre"
+              list="genre-list"
+              placeholder="Enter genre"
+            />
+            <datalist id="genre-list">
+              <!-- Genre options will be populated from JavaScript -->
+            </datalist>
+          </div>
+          <div>
+            <label for="year">Year</label>
+            <input
+              type="number"
+              id="year"
+              placeholder="Enter release year"
+              min="1900"
+              max="2099"
+            />
+          </div>
+          <div>
+            <label for="rating">Rating (1-10)</label>
+            <input
+              type="number"
+              id="rating"
+              step="0.1"
+              min="0"
+              max="10"
+              placeholder="Rate from 1-10"
+            />
+          </div>
+          <button type="submit">Add Movie</button>
+        </form>
+
+        <!-- Filter and Sort Section -->
+        <div class="filter-container">
+          <h2>Filter & Sort</h2>
+          <!-- Genre filter -->
+          <div class="filter-control">
+            <label for="filter-genre">Filter by Genre</label>
+            <input
+              type="text"
+              id="filter-genre"
+              list="genre-list"
+              placeholder="Enter genre"
+            />
+          </div>
+          <!-- Rating filter -->
+          <div class="filter-control">
+            <label for="filter-rating">Minimum Rating</label>
+            <select id="filter-rating">
+              <option value="">All Ratings</option>
+              <option value="9">9+</option>
+              <option value="8">8+</option>
+              <option value="7">7+</option>
+              <option value="6">6+</option>
+              <option value="5">5+</option>
+            </select>
+          </div>
+          <!-- Sort options -->
+          <div class="filter-control">
+            <label for="sort-by">Sort by</label>
+            <select id="sort-by">
+              <option value="title">Title</option>
+              <option value="year">Year</option>
+              <option value="rating">Rating (Highest)</option>
+            </select>
+          </div>
+          <button id="reset-filters">Reset View</button>
+        </div>
+      </div>
+
+      <!-- Main content area - Movie collection display -->
+      <div id="movie-list-container">
+        <h2>Your Movie Collection</h2>
+        <div id="movie-list"></div>
+      </div>
+    </div>
+
+    <!-- Notification toast for user feedback -->
+    <div id="notification" class="notification"></div>
+
+    <!-- Main JavaScript module - Entry point -->
+    <script type="module" src="main.js"></script>
+  </body>
+</html>
