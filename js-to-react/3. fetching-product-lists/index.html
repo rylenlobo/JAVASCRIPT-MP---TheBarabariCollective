@@ -1,0 +1,75 @@
+<!-- General page structure for a product listing website -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Metadata for the browser and search engines -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bananazon</title>
+    <!-- Link to the external CSS file for styling -->
+    <link rel="stylesheet" href="style.css" />
+    <!-- Link to Font Awesome for icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Header section of the page -->
+    <header>
+      <!-- Container to center content and manage padding -->
+      <div class="container">
+        <!-- Main title of the website -->
+        <h1>Bananazon</h1>
+        <!-- Controls for searching and filtering products -->
+        <div class="controls">
+          <!-- Search input and button container -->
+          <div class="search-container">
+            <input
+              type="text"
+              id="search-input"
+              placeholder="Search products..."
+            />
+            <button id="search-button"><i class="fas fa-search"></i></button>
+          </div>
+          <!-- Filter dropdowns container -->
+          <div class="filters">
+            <!-- Dropdown for selecting product category -->
+            <select id="category-select">
+              <option value="">All Categories</option>
+            </select>
+            <!-- Dropdown for selecting sorting option -->
+            <select id="sort-select">
+              <option value="">Sort By</option>
+              <option value="title-asc">Title ↑</option>
+              <option value="title-desc">Title ↓</option>
+              <option value="price-asc">Price ↑</option>
+              <option value="price-desc">Price ↓</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main content area of the page -->
+    <main class="container">
+      <!-- Area to display active filter pills -->
+      <div id="active-filters" class="active-filters"></div>
+      <!-- Area where the list of products will be displayed -->
+      <div id="product-list" class="product-list"></div>
+      <!-- Loading indicator shown while fetching products -->
+      <div id="loading-indicator" class="loading">
+        <div class="spinner"></div>
+        <p>Loading more products...</p>
+      </div>
+      <!-- Message shown when no products match the search/filters -->
+      <div id="no-results" class="no-results hidden">
+        <i class="fas fa-box-open"></i>
+        <p>No products found. Try a different search.</p>
+      </div>
+    </main>
+
+    <!-- JavaScript file, type="module" allows using ES6 import/export -->
+    <script type="module" src="script.js"></script>
+  </body>
+</html>

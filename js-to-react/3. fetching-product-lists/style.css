@@ -1,0 +1,385 @@
+/* Root variables for consistent styling across the site */
+:root {
+  --primary-color: #4a5568; /* Primary text and UI element color */
+  --secondary-color: #718096; /* Secondary text and UI element color */
+  --accent-color: #3182ce; /* Accent color for buttons, links, and highlights */
+  --light-color: #f7fafc; /* Light background or element color */
+  --dark-color: #2d3748; /* Dark text or element color */
+  --border-color: #e2e8f0; /* Border color for elements */
+  --shadow-color: rgba(0, 0, 0, 0.1); /* Shadow color for depth */
+  --success-color: #48bb78; /* Color for success messages or indicators */
+  --error-color: #e53e3e; /* Color for error messages or indicators */
+  --radius: 8px; /* Standard border radius for rounded corners */
+  --transition: all 0.3s ease; /* Standard transition for animations */
+}
+
+/* Universal reset for all elements */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Includes padding and border in the element's total width and height */
+}
+
+/* Styles for the main body of the page */
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; /* Preferred font stack */
+  background-color: #f8f9fa; /* Light gray background for the page */
+  color: var(--dark-color); /* Default text color */
+  line-height: 1.6; /* Spacing between lines of text */
+}
+
+/* Styles for container elements, used to center content and limit width */
+.container {
+  width: 100%;
+  max-width: 1200px; /* Maximum width of the content area */
+  margin: 0 auto; /* Centers the container horizontally */
+  padding: 0 20px; /* Padding on the left and right */
+}
+
+/* Styles for the header section */
+header {
+  background-color: white; /* White background for the header */
+  box-shadow: 0 2px 10px var(--shadow-color); /* Subtle shadow below the header */
+  position: sticky; /* Makes the header stick to the top on scroll */
+  top: 0;
+  z-index: 100; /* Ensures header stays above other content */
+  padding: 20px 0; /* Padding above and below header content */
+}
+
+/* Styles for the main heading (H1) within the header */
+header h1 {
+  font-size: 1.8rem; /* Size of the heading text */
+  color: var(--primary-color); /* Color of the heading text */
+  margin-bottom: 15px; /* Space below the heading */
+  text-align: center; /* Centers the heading text */
+}
+
+/* Styles for the controls container (search and filters) */
+.controls {
+  display: flex;
+  flex-direction: column; /* Stacks controls vertically on small screens */
+  gap: 15px; /* Space between control elements */
+}
+
+/* Styles for the search input and button container */
+.search-container {
+  display: flex;
+  width: 100%;
+}
+
+/* Styles for the search input field */
+.search-container input {
+  flex: 1; /* Allows input to take available space */
+  padding: 12px 15px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius) 0 0 var(--radius); /* Rounded corners on the left */
+  font-size: 1rem;
+  outline: none; /* Removes default browser outline */
+  transition: var(--transition);
+}
+
+/* Styles for the search input field when focused */
+.search-container input:focus {
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 2px rgba(49, 130, 206, 0.2); /* Highlight on focus */
+}
+
+/* Styles for the search button */
+.search-container button {
+  background-color: var(--accent-color);
+  color: white;
+  border: none;
+  padding: 0 20px;
+  border-radius: 0 var(--radius) var(--radius) 0; /* Rounded corners on the right */
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+/* Styles for the search button on hover */
+.search-container button:hover {
+  background-color: #2b6cb0; /* Darker accent color on hover */
+}
+
+/* Styles for the filters container (category and sort dropdowns) */
+.filters {
+  display: flex;
+  gap: 10px; /* Space between filter dropdowns */
+}
+
+/* Styles for select (dropdown) elements */
+select {
+  padding: 12px 35px 12px 15px; /* Padding, allows space for custom arrow */
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  background-color: white;
+  font-size: 1rem;
+  outline: none;
+  flex: 1; /* Allows dropdowns to take available space */
+  cursor: pointer;
+  transition: var(--transition);
+  appearance: none; /* Removes default browser appearance for select */
+  /* Custom dropdown arrow using SVG */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23718096' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center; /* Position of the custom arrow */
+  background-size: 16px;
+  text-overflow: ellipsis; /* Adds '...' if text is too long */
+  white-space: nowrap; /* Prevents text from wrapping */
+  overflow: hidden; /* Hides overflowing text */
+}
+
+/* Styles for select (dropdown) elements when focused */
+select:focus {
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 2px rgba(49, 130, 206, 0.2); /* Highlight on focus */
+}
+
+/* Styles for the container of active filter pills */
+.active-filters {
+  display: flex;
+  flex-wrap: wrap; /* Allows pills to wrap to the next line */
+  gap: 10px; /* Space between filter pills */
+  margin: 20px 0; /* Space above and below the pills container */
+}
+
+/* Styles for individual filter pills */
+.filter-pill {
+  background-color: var(--light-color);
+  color: var(--primary-color);
+  padding: 5px 10px;
+  border-radius: 20px; /* Highly rounded corners for pill shape */
+  font-size: 0.875rem;
+  display: flex;
+  align-items: center;
+  gap: 5px; /* Space between text and remove button in pill */
+  border: 1px solid var(--border-color);
+}
+
+/* Styles for the remove button within a filter pill */
+.filter-pill button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--secondary-color);
+  font-size: 0.875rem;
+}
+
+/* Styles for the product list container (grid layout) */
+.product-list {
+  display: grid;
+  /* Creates a responsive grid that adjusts columns based on available width */
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 25px; /* Space between product cards */
+  margin-top: 20px;
+}
+
+/* Styles for individual product cards */
+.product {
+  background-color: white;
+  border-radius: var(--radius);
+  overflow: hidden; /* Ensures content stays within rounded corners */
+  box-shadow: 0 3px 10px var(--shadow-color);
+  transition: var(--transition);
+  height: 100%; /* Ensures cards in a row have same height if content differs */
+  display: flex;
+  flex-direction: column; /* Stacks image, info, etc. vertically */
+}
+
+/* Styles for product cards on hover */
+.product:hover {
+  transform: translateY(-5px); /* Slight upward lift effect */
+  box-shadow: 0 6px 15px var(--shadow-color); /* Enhanced shadow on hover */
+}
+
+/* Styles for product images */
+.product-image {
+  width: 100%;
+  height: 200px; /* Fixed height for images */
+  object-fit: cover; /* Ensures image covers the area, cropping if necessary */
+  border-bottom: 1px solid var(--border-color);
+}
+
+/* Styles for the product information section within a card */
+.product-info {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1; /* Allows this section to take up remaining vertical space */
+}
+
+/* Styles for product titles */
+.product-title {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  color: var(--dark-color);
+  font-weight: 600;
+}
+
+/* Styles for product descriptions */
+.product-description {
+  color: var(--secondary-color);
+  font-size: 0.9rem;
+  margin-bottom: 15px;
+  flex-grow: 1; /* Allows description to take available space before details */
+  /* Clamps the description to a specific number of lines with ellipsis */
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* Show a maximum of 3 lines */
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Styles for the container of product price and rating */
+.product-details {
+  display: flex;
+  justify-content: space-between; /* Pushes price and rating to opposite ends */
+  align-items: center;
+  margin-top: auto; /* Pushes details to the bottom of the card info section */
+}
+
+/* Styles for product prices */
+.product-price {
+  font-weight: 700;
+  color: var(--primary-color);
+  font-size: 1.2rem;
+}
+
+/* Styles for product ratings */
+.product-rating {
+  display: flex;
+  align-items: center;
+  color: #f6ad55; /* Gold color for stars */
+  gap: 5px;
+}
+
+/* Styles for product stock status indicators */
+.product-stock {
+  margin-top: 10px;
+  font-size: 0.85rem;
+  padding: 3px 8px;
+  border-radius: 12px; /* Pill shape for stock status */
+  display: inline-block;
+  font-weight: 500;
+}
+
+/* Styles for 'in stock' status */
+.in-stock {
+  background-color: rgba(72, 187, 120, 0.1); /* Light green background */
+  color: var(--success-color);
+}
+
+/* Styles for 'low stock' status */
+.low-stock {
+  background-color: rgba(246, 173, 85, 0.1); /* Light orange background */
+  color: #dd6b20; /* Dark orange text */
+}
+
+/* Styles for 'out of stock' status */
+.out-of-stock {
+  background-color: rgba(229, 62, 62, 0.1); /* Light red background */
+  color: var(--error-color);
+}
+
+/* Styles for the loading indicator section */
+.loading {
+  display: none; /* Hidden by default */
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 0;
+}
+
+/* Styles for the loading indicator when it's visible */
+.loading.visible {
+  display: flex; /* Shown when loading */
+}
+
+/* Styles for the spinner animation in the loading indicator */
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid var(--border-color);
+  border-top: 4px solid var(--accent-color); /* Accent color for the spinning part */
+  border-radius: 50%; /* Makes it a circle */
+  animation: spin 1s linear infinite; /* Applies the spin animation */
+  margin-bottom: 15px;
+}
+
+/* Styles for the text in the loading indicator */
+.loading p {
+  color: var(--secondary-color);
+}
+
+/* Keyframes for the spinner animation */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Styles for the 'no results' message section */
+.no-results {
+  display: flex; /* Hidden by default (uses .hidden class) */
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 0;
+  color: var(--secondary-color);
+}
+
+/* Styles for the icon in the 'no results' message */
+.no-results i {
+  font-size: 4rem;
+  margin-bottom: 20px;
+  opacity: 0.6;
+}
+
+/* Utility class to hide elements */
+.hidden {
+  display: none !important; /* Overrides other display properties to hide */
+}
+
+/* Styles for notification popups */
+.notification {
+  position: fixed; /* Fixed position relative to the viewport */
+  top: 20px;
+  right: 20px;
+  padding: 15px 20px;
+  background-color: white;
+  border-radius: var(--radius);
+  box-shadow: 0 4px 15px var(--shadow-color);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transform: translateX(120%); /* Initially off-screen to the right */
+  transition: transform 0.3s ease; /* Smooth transition for sliding in/out */
+  z-index: 1000; /* Ensures notification is on top of other content */
+}
+
+/* Styles for notification when it's shown (slides in) */
+.notification.show {
+  transform: translateX(0);
+}
+
+/* Styles for success notifications */
+.notification.success {
+  border-left: 4px solid var(--success-color); /* Green left border */
+}
+
+/* Styles for error notifications */
+.notification.error {
+  border-left: 4px solid var(--error-color); /* Red left border */
+}
+
+/* Responsive adjustments for medium screens and up (tablets, desktops) */
+@media (min-width: 768px) {
+  /* Adjusts header H1 alignment and margin on larger screens */
+  header h1 {
+    text-align: left;
+    margin-bottom: 0;
+  }
+}
+/* Adjusts layout of controls (search, filters) to be */
